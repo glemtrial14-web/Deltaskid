@@ -1,5 +1,5 @@
 return {
-	-- ANCIENTS
+	-- [[ ANCIENTS ]]
 	["Gingerscope"] = 15500,
 	["TravelerAxe"] = 7200,
 	["TreeGun2023"] = 4300, -- Evergun
@@ -17,7 +17,7 @@ return {
 	["Logchopper"] = 20,
 	["Icewing"] = 12,
 
-	-- CHROMAS
+	-- [[ CHROMAS ]]
 	["TravelerGunChroma"] = 130000,
 	["TreeGun2023Chroma"] = 75000, -- Chroma Evergun
 	["TreeKnife2023Chroma"] = 53000, -- Chroma Evergreen
@@ -54,7 +54,7 @@ return {
 	["SawChroma"] = 40,
 	["SeerChroma"] = 40,
 
-	-- GODLIES
+	-- [[ GODLIES ]]
 	["Constellation"] = 3000,
 	["VampireGun"] = 1825,
 	["Turkey2023"] = 1800,
@@ -70,9 +70,11 @@ return {
 	["WraithGun"] = 270, -- Soul
 	["SunsetGun"] = 270, -- Sunrise
 	["WraithKnife"] = 265, -- Spirit
-	["RainbowGun"] = 250, -- Rainbow (Gun)
+	["Rainbow_G"] = 250, -- Rainbow Gun (ID FIXED)
+	["RainbowGun"] = 250, -- Backup Name
 	["ZombieBat"] = 245, -- Bat
-	["Rainbow"] = 245, -- Rainbow (Knife)
+	["Rainbow_K"] = 245, -- Rainbow Knife (ID FIXED)
+	["Rainbow"] = 245, -- Backup Name
 	["Flora"] = 215,
 	["Bloom"] = 205,
 	["SunsetKnife"] = 180, -- Sunset
@@ -172,10 +174,10 @@ return {
 	["OrangeSeer"] = 2,
 	["YellowSeer"] = 2,
 
-	-- UNIQUES
+	-- [[ UNIQUES ]]
 	["Sorry"] = 825, -- Corrupt
 
-	-- VINTAGES
+	-- [[ VINTAGES ]]
 	["GhostKnife"] = 10,
 	["BloodKnife"] = 8,
 	["Disint"] = 8, -- Laser (Vintage)
@@ -187,7 +189,7 @@ return {
 	["GoldenGun"] = 4,
 	["Knife1"] = 3, -- Splitter
 
-	-- LEGENDARIES
+	-- [[ LEGENDARIES ]]
 	["Latte_G_2023"] = 125,
 	["Latte_K_2023"] = 125,
 	["JD"] = 40,
@@ -225,8 +227,8 @@ return {
 	["RedFire"] = 1,
 	["Cavern_G_2019"] = 1,
 
-	-- RARES
-	["Cane_K_2018"] = 450, -- Cane Knife 2018
+	-- [[ RARES ]]
+	["Cane_K_2018"] = 450, -- Cane Knife 2018 (ID FIXED)
 	["SilentNight_K_2020"] = 50,
 	["Dungeon"] = 28,
 	["Zombified_K_2022"] = 27,
@@ -259,7 +261,7 @@ return {
 	["SnakebiteG"] = 1,
 	["VampireK2018"] = 1,
 
-	-- PETS
+	-- [[ PETS ]]
 	["ZombieDog"] = 450, -- Zombie Dog
 	["Elf2019"] = 200,
 	["BluePumpkin2018"] = 140,
@@ -310,7 +312,7 @@ return {
 	["Sammy"] = 1,
 	["Skelly"] = 1,
 
-	-- COMMON (High Value)
+	-- [[ COMMON (High Value) ]]
 	["Bats_K_2020"] = 110,
 	["Pine_K_2019"] = 85,
 	["Batwing"] = 80, -- Glitch1
