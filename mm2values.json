@@ -71,10 +71,8 @@ return {
 	["SunsetGun"] = 270, -- Sunrise
 	["WraithKnife"] = 265, -- Spirit
 	["Rainbow_G"] = 250, -- Rainbow Gun (ID FIXED)
-	["RainbowGun"] = 250, -- Backup Name
 	["ZombieBat"] = 245, -- Bat
 	["Rainbow_K"] = 245, -- Rainbow Knife (ID FIXED)
-	["Rainbow"] = 245, -- Backup Name
 	["Flora"] = 215,
 	["Bloom"] = 205,
 	["SunsetKnife"] = 180, -- Sunset
