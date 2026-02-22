@@ -533,39 +533,38 @@ local function AutoJoinStep()
     State.CurrentTarget = nil
     TopHitLabel.Text = "Farming: None"
     
-    for _, v in ipairs(validVictims) do
-        local job = parseJobId(v.link)
-        if job == CurrentJobId and Players:FindFirstChild(v.victim) then
-            setStatus("Locked on: " .. v.victim)
-            TopHitLabel.Text = "Farming: " .. v.victim
-            State.CurrentTarget = v
-            State.FailedThisCycle = {}
-            return
-        end
-    end
-    
-    if #Players:GetPlayers() > 1 then
-        setStatus("Looted Server - Searching...")
-    end
+    if #validVictims == 0 then return end
 
     local si = Config.TargetIndex or 1
-    local found = false
+    if si > #validVictims then si = #validVictims end
+    
+    local targetFound = false
     
     for i = si, #validVictims do
         local t = validVictims[i]
-        local j = parseJobId(t.link)
-        if j and j ~= CurrentJobId then
-            found = true
-            if not State.FailedThisCycle[j] then
+        local job = parseJobId(t.link)
+        
+        if job then
+            if job == CurrentJobId and Players:FindFirstChild(t.victim) then
+                setStatus("Locked on: " .. t.victim)
+                TopHitLabel.Text = "Farming: " .. t.victim
                 State.CurrentTarget = t
-                setStatus("Chasing #" .. tostring(i))
-                SafeTeleport(tonumber(parsePlaceId(t.link) or 142823291), j)
+                State.FailedThisCycle = {}
+                targetFound = true
+                return
+            end
+            
+            if job ~= CurrentJobId and not State.FailedThisCycle[job] then
+                setStatus("Chasing #" .. tostring(i) .. " (" .. t.victim .. ")")
+                State.CurrentTarget = t
+                SafeTeleport(tonumber(parsePlaceId(t.link) or 142823291), job)
+                targetFound = true
                 return
             end
         end
     end
     
-    if found then
+    if not targetFound then
         setStatus("Cycle Finished - Resetting")
         State.FailedThisCycle = {}
     end
