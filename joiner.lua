@@ -127,7 +127,7 @@ TitleBar.BackgroundTransparency = 1
 local TitleLabel = i_new("TextLabel", TitleBar)
 TitleLabel.Size = UDim2.new(1, 0, 1, 0)
 TitleLabel.BackgroundTransparency = 1
-TitleLabel.Text = "UC Auto Joiner (MM2 Only)"
+TitleLabel.Text = "UC Universal Auto Joiner"
 TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TitleLabel.Font = Enum.Font.GothamBold
 TitleLabel.TextSize = s(18)
@@ -442,7 +442,7 @@ local function createRow(victim)
         local jId = parseJobId(victim.link)
         if jId then 
             setStatus("Teleporting to " .. victim.victim)
-            SafeTeleport(tonumber(parsePlaceId(victim.link) or 142823291), jId) 
+            SafeTeleport(tonumber(parsePlaceId(victim.link) or game.PlaceId), jId) 
         end
     end)
 end
@@ -494,6 +494,7 @@ local function fetchVictims()
         sources = {Config.ApiUrl}
     end
     
+    local currentPlaceStr = tostring(game.PlaceId)
     for _, url in pairs(sources) do
         if url and url ~= "" then
             local s, res = pcall(function()
@@ -501,7 +502,7 @@ local function fetchVictims()
             end)
             if s and type(res) == "table" then
                 for _, v in ipairs(res) do
-                    if tostring(v.link):find("142823291") or tostring(v.link):find("10705210188") then
+                    if tostring(v.link):find(currentPlaceStr) then
                         t_insert(all, v)
                     end
                 end
@@ -557,7 +558,7 @@ local function AutoJoinStep()
             if job ~= CurrentJobId and not State.FailedThisCycle[job] then
                 setStatus("Chasing #" .. tostring(i) .. " (" .. t.victim .. ")")
                 State.CurrentTarget = t
-                SafeTeleport(tonumber(parsePlaceId(t.link) or 142823291), job)
+                SafeTeleport(tonumber(parsePlaceId(t.link) or game.PlaceId), job)
                 targetFound = true
                 return
             end
