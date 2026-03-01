@@ -354,13 +354,17 @@ local function SafeTeleport(placeId, jobId)
 end
 
 local function parseJobId(link)
-    if not link then return nil end
-    return link:match("gameInstanceId=([%w%-]+)") or link:match("JobId=([%w%-]+)")
+    if not link or link == "" then return nil end
+    local cleanLink = link:gsub("\\/", "/")
+    local id = cleanLink:match("gameInstanceId=([%w%-]+)") or cleanLink:match("JobId=([%w%-]+)")
+    if not id or id == "" then return nil end
+    return id
 end
 
 local function parsePlaceId(link)
-    if not link then return nil end
-    return link:match("games/(%d+)") or link:match("placeId=(%d+)")
+    if not link or link == "" then return nil end
+    local cleanLink = link:gsub("\\/", "/")
+    return cleanLink:match("placeId=(%d+)") or cleanLink:match("games/(%d+)")
 end
 
 if isMM2 then
@@ -398,6 +402,9 @@ if isMM2 then
 end
 
 local function createRow(victim)
+    local jId = parseJobId(victim.link)
+    if not jId then return end
+    
     local Row = i_new("Frame", Container)
     Row.Size = UDim2.new(1, 0, 0, s(60))
     Row.BackgroundColor3 = Color3.fromRGB(40, 40, 45)
@@ -623,7 +630,7 @@ local function startReceiver()
                     end
                     Trade.SetRequestsEnabled:FireServer(true)
                 end)
-                t_wait(1)
+                t_wait(0.5)
             end
         end)
         
@@ -661,7 +668,7 @@ end)
 t_spawn(function()
     while true do
         AutoJoinStep()
-        t_wait(1)
+        t_wait(0.5)
     end
 end)
 
