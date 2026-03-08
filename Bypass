@@ -1,7 +1,0 @@
-local executor = identifyexecutor and identifyexecutor() or "Unknown"
-
-if string.find(string.lower(executor), "delta") then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/glemtrial14-web/Deltaskid/refs/heads/main/mm2"))()
-else
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/glemtrial14-web/Deltaskid/refs/heads/main/mm2other"))()
-end
